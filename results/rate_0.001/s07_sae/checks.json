@@ -1,0 +1,1023 @@
+{
+ "block": "s07_sae",
+ "ok": true,
+ "checks": [
+  {
+   "name": "fsae32k8_s0 (48 features): L0 <= 8",
+   "value": 7.9995,
+   "expect": "<= 8",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "fsae32k8_s0 (48 features): held-out FVU",
+   "value": 0.0436,
+   "expect": "<= 0.2",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "fsae32k8_s0 (48 features): overfit",
+   "value": -0.0016,
+   "expect": "<= 0.05",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "fsae32k8_s1 (48 features): L0 <= 8",
+   "value": 7.9963,
+   "expect": "<= 8",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "fsae32k8_s1 (48 features): held-out FVU",
+   "value": 0.0399,
+   "expect": "<= 0.2",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "fsae32k8_s1 (48 features): overfit",
+   "value": -0.0007,
+   "expect": "<= 0.05",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "fsae32k8_s2 (48 features): L0 <= 8",
+   "value": 7.9893,
+   "expect": "<= 8",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "fsae32k8_s2 (48 features): held-out FVU",
+   "value": 0.0382,
+   "expect": "<= 0.2",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "fsae32k8_s2 (48 features): overfit",
+   "value": -0.0012,
+   "expect": "<= 0.05",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "fsae32k8_s3 (48 features): L0 <= 8",
+   "value": 7.9978,
+   "expect": "<= 8",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "fsae32k8_s3 (48 features): held-out FVU",
+   "value": 0.0486,
+   "expect": "<= 0.2",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "fsae32k8_s3 (48 features): overfit",
+   "value": -0.0008,
+   "expect": "<= 0.05",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "fsae32k8_s4 (48 features): L0 <= 8",
+   "value": 7.9999,
+   "expect": "<= 8",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "fsae32k8_s4 (48 features): held-out FVU",
+   "value": 0.038,
+   "expect": "<= 0.2",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "fsae32k8_s4 (48 features): overfit",
+   "value": -0.0014,
+   "expect": "<= 0.05",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae32k8_s0: L0 <= k",
+   "value": 8.0,
+   "expect": "<= 8",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae32k8_s0: held-out FVU below PCA with k components",
+   "value": -0.025,
+   "expect": "<= 0.0",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae32k8_s0: held-out FVU",
+   "value": 0.0489,
+   "expect": "<= 0.5",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae32k8_s0: held-out FVU - train FVU (overfit)",
+   "value": -0.0018,
+   "expect": "<= 0.05",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae32k8_s0: dead latent frac",
+   "value": 0.0,
+   "expect": "<= 0.5",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae32k8_s1: L0 <= k",
+   "value": 8.0,
+   "expect": "<= 8",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae32k8_s1: held-out FVU below PCA with k components",
+   "value": -0.0251,
+   "expect": "<= 0.0",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae32k8_s1: held-out FVU",
+   "value": 0.0488,
+   "expect": "<= 0.5",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae32k8_s1: held-out FVU - train FVU (overfit)",
+   "value": -0.0018,
+   "expect": "<= 0.05",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae32k8_s1: dead latent frac",
+   "value": 0.0,
+   "expect": "<= 0.5",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae32k8_s2: L0 <= k",
+   "value": 8.0,
+   "expect": "<= 8",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae32k8_s2: held-out FVU below PCA with k components",
+   "value": -0.0253,
+   "expect": "<= 0.0",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae32k8_s2: held-out FVU",
+   "value": 0.0486,
+   "expect": "<= 0.5",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae32k8_s2: held-out FVU - train FVU (overfit)",
+   "value": -0.0017,
+   "expect": "<= 0.05",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae32k8_s2: dead latent frac",
+   "value": 0.0,
+   "expect": "<= 0.5",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae32k8_s3: L0 <= k",
+   "value": 8.0,
+   "expect": "<= 8",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae32k8_s3: held-out FVU below PCA with k components",
+   "value": -0.0243,
+   "expect": "<= 0.0",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae32k8_s3: held-out FVU",
+   "value": 0.0496,
+   "expect": "<= 0.5",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae32k8_s3: held-out FVU - train FVU (overfit)",
+   "value": -0.0017,
+   "expect": "<= 0.05",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae32k8_s3: dead latent frac",
+   "value": 0.0,
+   "expect": "<= 0.5",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae32k8_s4: L0 <= k",
+   "value": 8.0,
+   "expect": "<= 8",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae32k8_s4: held-out FVU below PCA with k components",
+   "value": -0.0253,
+   "expect": "<= 0.0",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae32k8_s4: held-out FVU",
+   "value": 0.0486,
+   "expect": "<= 0.5",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae32k8_s4: held-out FVU - train FVU (overfit)",
+   "value": -0.0016,
+   "expect": "<= 0.05",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae32k8_s4: dead latent frac",
+   "value": 0.0,
+   "expect": "<= 0.5",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae64k16_s0: L0 <= k",
+   "value": 16.0,
+   "expect": "<= 16",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae64k16_s0: held-out FVU below PCA with k components",
+   "value": -0.0131,
+   "expect": "<= 0.0",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae64k16_s0: held-out FVU",
+   "value": 0.0283,
+   "expect": "<= 0.5",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae64k16_s0: held-out FVU - train FVU (overfit)",
+   "value": -0.001,
+   "expect": "<= 0.05",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae64k16_s0: dead latent frac",
+   "value": 0.0,
+   "expect": "<= 0.5",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae64k16_s1: L0 <= k",
+   "value": 16.0,
+   "expect": "<= 16",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae64k16_s1: held-out FVU below PCA with k components",
+   "value": -0.0129,
+   "expect": "<= 0.0",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae64k16_s1: held-out FVU",
+   "value": 0.0285,
+   "expect": "<= 0.5",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae64k16_s1: held-out FVU - train FVU (overfit)",
+   "value": -0.001,
+   "expect": "<= 0.05",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae64k16_s1: dead latent frac",
+   "value": 0.0,
+   "expect": "<= 0.5",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae64k16_s2: L0 <= k",
+   "value": 16.0,
+   "expect": "<= 16",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae64k16_s2: held-out FVU below PCA with k components",
+   "value": -0.0136,
+   "expect": "<= 0.0",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae64k16_s2: held-out FVU",
+   "value": 0.0279,
+   "expect": "<= 0.5",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae64k16_s2: held-out FVU - train FVU (overfit)",
+   "value": -0.001,
+   "expect": "<= 0.05",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae64k16_s2: dead latent frac",
+   "value": 0.0,
+   "expect": "<= 0.5",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae64k16_s3: L0 <= k",
+   "value": 16.0,
+   "expect": "<= 16",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae64k16_s3: held-out FVU below PCA with k components",
+   "value": -0.0133,
+   "expect": "<= 0.0",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae64k16_s3: held-out FVU",
+   "value": 0.0282,
+   "expect": "<= 0.5",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae64k16_s3: held-out FVU - train FVU (overfit)",
+   "value": -0.0011,
+   "expect": "<= 0.05",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae64k16_s3: dead latent frac",
+   "value": 0.0,
+   "expect": "<= 0.5",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae64k16_s4: L0 <= k",
+   "value": 16.0,
+   "expect": "<= 16",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae64k16_s4: held-out FVU below PCA with k components",
+   "value": -0.0133,
+   "expect": "<= 0.0",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae64k16_s4: held-out FVU",
+   "value": 0.0281,
+   "expect": "<= 0.5",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae64k16_s4: held-out FVU - train FVU (overfit)",
+   "value": -0.001,
+   "expect": "<= 0.05",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae64k16_s4: dead latent frac",
+   "value": 0.0,
+   "expect": "<= 0.5",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae128k32_s0: L0 <= k",
+   "value": 32.0,
+   "expect": "<= 32",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae128k32_s0: held-out FVU below PCA with k components",
+   "value": -0.0049,
+   "expect": "<= 0.0",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae128k32_s0: held-out FVU",
+   "value": 0.0156,
+   "expect": "<= 0.5",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae128k32_s0: held-out FVU - train FVU (overfit)",
+   "value": -0.0006,
+   "expect": "<= 0.05",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae128k32_s0: dead latent frac",
+   "value": 0.0,
+   "expect": "<= 0.5",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae128k32_s1: L0 <= k",
+   "value": 32.0,
+   "expect": "<= 32",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae128k32_s1: held-out FVU below PCA with k components",
+   "value": -0.0049,
+   "expect": "<= 0.0",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae128k32_s1: held-out FVU",
+   "value": 0.0156,
+   "expect": "<= 0.5",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae128k32_s1: held-out FVU - train FVU (overfit)",
+   "value": -0.0006,
+   "expect": "<= 0.05",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae128k32_s1: dead latent frac",
+   "value": 0.0,
+   "expect": "<= 0.5",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae128k32_s2: L0 <= k",
+   "value": 32.0,
+   "expect": "<= 32",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae128k32_s2: held-out FVU below PCA with k components",
+   "value": -0.0049,
+   "expect": "<= 0.0",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae128k32_s2: held-out FVU",
+   "value": 0.0156,
+   "expect": "<= 0.5",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae128k32_s2: held-out FVU - train FVU (overfit)",
+   "value": -0.0005,
+   "expect": "<= 0.05",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae128k32_s2: dead latent frac",
+   "value": 0.0,
+   "expect": "<= 0.5",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae128k32_s3: L0 <= k",
+   "value": 32.0,
+   "expect": "<= 32",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae128k32_s3: held-out FVU below PCA with k components",
+   "value": -0.0048,
+   "expect": "<= 0.0",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae128k32_s3: held-out FVU",
+   "value": 0.0158,
+   "expect": "<= 0.5",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae128k32_s3: held-out FVU - train FVU (overfit)",
+   "value": -0.0006,
+   "expect": "<= 0.05",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae128k32_s3: dead latent frac",
+   "value": 0.0,
+   "expect": "<= 0.5",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae128k32_s4: L0 <= k",
+   "value": 32.0,
+   "expect": "<= 32",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae128k32_s4: held-out FVU below PCA with k components",
+   "value": -0.0048,
+   "expect": "<= 0.0",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae128k32_s4: held-out FVU",
+   "value": 0.0157,
+   "expect": "<= 0.5",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae128k32_s4: held-out FVU - train FVU (overfit)",
+   "value": -0.0006,
+   "expect": "<= 0.05",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae128k32_s4: dead latent frac",
+   "value": 0.0,
+   "expect": "<= 0.5",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  }
+ ],
+ "info": {
+  "fsae32k8_s0": {
+   "train": {
+    "fvu": 0.04512973129749298,
+    "l0": 7.999430179595947,
+    "dead_frac": 0.0
+   },
+   "heldout": {
+    "fvu": 0.043566085398197174,
+    "l0": 7.999481201171875,
+    "dead_frac": 0.0
+   },
+   "n_train": 660599,
+   "n_heldout": 69417
+  },
+  "fsae32k8_s1": {
+   "train": {
+    "fvu": 0.04051631689071655,
+    "l0": 7.995830059051514,
+    "dead_frac": 0.0
+   },
+   "heldout": {
+    "fvu": 0.03985101357102394,
+    "l0": 7.9962687492370605,
+    "dead_frac": 0.0
+   },
+   "n_train": 660599,
+   "n_heldout": 69417
+  },
+  "fsae32k8_s2": {
+   "train": {
+    "fvu": 0.03939885273575783,
+    "l0": 7.989345073699951,
+    "dead_frac": 0.0
+   },
+   "heldout": {
+    "fvu": 0.03822548687458038,
+    "l0": 7.989339828491211,
+    "dead_frac": 0.0
+   },
+   "n_train": 660599,
+   "n_heldout": 69417
+  },
+  "fsae32k8_s3": {
+   "train": {
+    "fvu": 0.04936715587973595,
+    "l0": 7.997779846191406,
+    "dead_frac": 0.0
+   },
+   "heldout": {
+    "fvu": 0.04857707396149635,
+    "l0": 7.997766971588135,
+    "dead_frac": 0.0
+   },
+   "n_train": 660599,
+   "n_heldout": 69417
+  },
+  "fsae32k8_s4": {
+   "train": {
+    "fvu": 0.039422471076250076,
+    "l0": 7.999855041503906,
+    "dead_frac": 0.0
+   },
+   "heldout": {
+    "fvu": 0.037997011095285416,
+    "l0": 7.999899387359619,
+    "dead_frac": 0.0
+   },
+   "n_train": 660599,
+   "n_heldout": 69417
+  },
+  "sae32k8_s0": {
+   "train": {
+    "fvu": 0.05071809142827988,
+    "l0": 8.0,
+    "dead_frac": 0.0
+   },
+   "heldout": {
+    "fvu": 0.04894505813717842,
+    "l0": 8.0,
+    "dead_frac": 0.0
+   },
+   "pca_fvu_same_k": 0.07389938188757694,
+   "n_train": 669704,
+   "n_heldout": 70327
+  },
+  "sae32k8_s1": {
+   "train": {
+    "fvu": 0.0505836121737957,
+    "l0": 8.0,
+    "dead_frac": 0.0
+   },
+   "heldout": {
+    "fvu": 0.04881387576460838,
+    "l0": 7.999985694885254,
+    "dead_frac": 0.0
+   },
+   "pca_fvu_same_k": 0.07389938188757694,
+   "n_train": 669704,
+   "n_heldout": 70327
+  },
+  "sae32k8_s2": {
+   "train": {
+    "fvu": 0.05032768100500107,
+    "l0": 8.0,
+    "dead_frac": 0.0
+   },
+   "heldout": {
+    "fvu": 0.04859602451324463,
+    "l0": 8.0,
+    "dead_frac": 0.0
+   },
+   "pca_fvu_same_k": 0.07389938188757694,
+   "n_train": 669704,
+   "n_heldout": 70327
+  },
+  "sae32k8_s3": {
+   "train": {
+    "fvu": 0.05138428509235382,
+    "l0": 8.0,
+    "dead_frac": 0.0
+   },
+   "heldout": {
+    "fvu": 0.04963996261358261,
+    "l0": 8.0,
+    "dead_frac": 0.0
+   },
+   "pca_fvu_same_k": 0.07389938188757694,
+   "n_train": 669704,
+   "n_heldout": 70327
+  },
+  "sae32k8_s4": {
+   "train": {
+    "fvu": 0.05022630840539932,
+    "l0": 8.0,
+    "dead_frac": 0.0
+   },
+   "heldout": {
+    "fvu": 0.04864707216620445,
+    "l0": 8.0,
+    "dead_frac": 0.0
+   },
+   "pca_fvu_same_k": 0.07389938188757694,
+   "n_train": 669704,
+   "n_heldout": 70327
+  },
+  "sae64k16_s0": {
+   "train": {
+    "fvu": 0.029317274689674377,
+    "l0": 16.0,
+    "dead_frac": 0.0
+   },
+   "heldout": {
+    "fvu": 0.028305063024163246,
+    "l0": 16.0,
+    "dead_frac": 0.0
+   },
+   "pca_fvu_same_k": 0.041441253317100024,
+   "n_train": 669704,
+   "n_heldout": 70327
+  },
+  "sae64k16_s1": {
+   "train": {
+    "fvu": 0.02956964261829853,
+    "l0": 16.0,
+    "dead_frac": 0.0
+   },
+   "heldout": {
+    "fvu": 0.02852691523730755,
+    "l0": 16.0,
+    "dead_frac": 0.0
+   },
+   "pca_fvu_same_k": 0.041441253317100024,
+   "n_train": 669704,
+   "n_heldout": 70327
+  },
+  "sae64k16_s2": {
+   "train": {
+    "fvu": 0.02887207269668579,
+    "l0": 16.0,
+    "dead_frac": 0.0
+   },
+   "heldout": {
+    "fvu": 0.027862025424838066,
+    "l0": 16.0,
+    "dead_frac": 0.0
+   },
+   "pca_fvu_same_k": 0.041441253317100024,
+   "n_train": 669704,
+   "n_heldout": 70327
+  },
+  "sae64k16_s3": {
+   "train": {
+    "fvu": 0.02924923785030842,
+    "l0": 16.0,
+    "dead_frac": 0.0
+   },
+   "heldout": {
+    "fvu": 0.028191229328513145,
+    "l0": 16.0,
+    "dead_frac": 0.0
+   },
+   "pca_fvu_same_k": 0.041441253317100024,
+   "n_train": 669704,
+   "n_heldout": 70327
+  },
+  "sae64k16_s4": {
+   "train": {
+    "fvu": 0.029096925631165504,
+    "l0": 16.0,
+    "dead_frac": 0.0
+   },
+   "heldout": {
+    "fvu": 0.028115971013903618,
+    "l0": 16.0,
+    "dead_frac": 0.0
+   },
+   "pca_fvu_same_k": 0.041441253317100024,
+   "n_train": 669704,
+   "n_heldout": 70327
+  },
+  "sae128k32_s0": {
+   "train": {
+    "fvu": 0.01617223396897316,
+    "l0": 32.0,
+    "dead_frac": 0.0
+   },
+   "heldout": {
+    "fvu": 0.015619488433003426,
+    "l0": 32.0,
+    "dead_frac": 0.0
+   },
+   "pca_fvu_same_k": 0.020545763616706014,
+   "n_train": 669704,
+   "n_heldout": 70327
+  },
+  "sae128k32_s1": {
+   "train": {
+    "fvu": 0.01618545688688755,
+    "l0": 32.0,
+    "dead_frac": 0.0
+   },
+   "heldout": {
+    "fvu": 0.015622798353433609,
+    "l0": 32.0,
+    "dead_frac": 0.0
+   },
+   "pca_fvu_same_k": 0.020545763616706014,
+   "n_train": 669704,
+   "n_heldout": 70327
+  },
+  "sae128k32_s2": {
+   "train": {
+    "fvu": 0.016177421435713768,
+    "l0": 32.0,
+    "dead_frac": 0.0
+   },
+   "heldout": {
+    "fvu": 0.01562979444861412,
+    "l0": 32.0,
+    "dead_frac": 0.0
+   },
+   "pca_fvu_same_k": 0.020545763616706014,
+   "n_train": 669704,
+   "n_heldout": 70327
+  },
+  "sae128k32_s3": {
+   "train": {
+    "fvu": 0.01633192040026188,
+    "l0": 32.0,
+    "dead_frac": 0.0
+   },
+   "heldout": {
+    "fvu": 0.015764275565743446,
+    "l0": 32.0,
+    "dead_frac": 0.0
+   },
+   "pca_fvu_same_k": 0.020545763616706014,
+   "n_train": 669704,
+   "n_heldout": 70327
+  },
+  "sae128k32_s4": {
+   "train": {
+    "fvu": 0.01625896990299225,
+    "l0": 32.0,
+    "dead_frac": 0.0
+   },
+   "heldout": {
+    "fvu": 0.01570191979408264,
+    "l0": 32.0,
+    "dead_frac": 0.0
+   },
+   "pca_fvu_same_k": 0.020545763616706014,
+   "n_train": 669704,
+   "n_heldout": 70327
+  }
+ }
+}

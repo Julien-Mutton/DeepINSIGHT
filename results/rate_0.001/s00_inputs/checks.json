@@ -1,0 +1,102 @@
+{
+ "block": "s00_inputs",
+ "ok": true,
+ "checks": [
+  {
+   "name": "inputs_missing",
+   "value": [],
+   "expect": "== []",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "hyena_weights_sha256_equals_huggingface",
+   "value": "02729e5fcbd426a3965a2cca789dae8bd0ed9e24289cac60e5ca9e37525e555a",
+   "expect": "== 02729e5fcbd426a3965a2cca789dae8bd0ed9e24289cac60e5ca9e37525e555a",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "chain_md5_equals_ucsc",
+   "value": "35887f73fe5e2231656504d1f6430900",
+   "expect": "== 35887f73fe5e2231656504d1f6430900",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "linsight_bw_size_equals_upstream",
+   "value": 1395672914,
+   "expect": "== 1395672914",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "hg19_autosome_lengths_equal_ucsc",
+   "value": [],
+   "expect": "== []",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "hg38_autosome_lengths_equal_ucsc",
+   "value": [],
+   "expect": "== []",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "unit_tests_exit_code",
+   "value": 0,
+   "expect": "== 0",
+   "passed": true,
+   "control": false,
+   "detail": "................................                                         [100%]"
+  }
+ ],
+ "info": {
+  "inputs": {
+   "bench_dir": {
+    "path": "data/benchmark",
+    "bytes": null
+   },
+   "ins": {
+    "path": "data/linsight/INSIGHT_database.ins",
+    "bytes": 58195469085
+   },
+   "feature_bed": {
+    "path": "data/linsight/genomic_feature.bed",
+    "bytes": 28220283397
+   },
+   "linsight_bw": {
+    "path": "data/linsight/LINSIGHT.bw",
+    "bytes": 1395672914
+   },
+   "linsight_src": {
+    "path": "third_party/linsight_cpp",
+    "bytes": null
+   },
+   "hg19": {
+    "path": "data/genomes/hg19.fa",
+    "bytes": 3199905909
+   },
+   "hg38": {
+    "path": "data/genomes/hg38.ml.fa",
+    "bytes": 3091663428
+   },
+   "chain": {
+    "path": "data/genomes/hg19ToHg38.over.chain.gz",
+    "bytes": 227698
+   },
+   "hyena_dir": {
+    "path": "data/hyenadna/hyenadna-medium-160k-seqlen",
+    "bytes": null
+   }
+  }
+ }
+}

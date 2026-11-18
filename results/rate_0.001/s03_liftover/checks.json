@@ -1,0 +1,157 @@
+{
+ "block": "s03_liftover",
+ "ok": true,
+ "checks": [
+  {
+   "name": "sites: lift_ok_frac",
+   "value": 0.99927,
+   "expect": ">= 0.98",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sites: hg19 base == hg38 base",
+   "value": 1.0,
+   "expect": ">= 0.995",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sites: 21-mer identical",
+   "value": 0.99985,
+   "expect": ">= 0.97",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sites: CONTROL base at pos38+1",
+   "value": 0.2975,
+   "expect": "<= 0.5",
+   "passed": true,
+   "control": true,
+   "detail": ""
+  },
+  {
+   "name": "sites: CONTROL 21-mer at pos38+1",
+   "value": 0.0,
+   "expect": "<= 0.05",
+   "passed": true,
+   "control": true,
+   "detail": ""
+  },
+  {
+   "name": "sites: mean 1001-bp window identity",
+   "value": 0.9998,
+   "expect": ">= 0.95",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sites: frac windows >= 0.99 identical",
+   "value": 0.9985,
+   "expect": ">= 0.9",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sites: every ok row's chromosome is in hg38.fa",
+   "value": true,
+   "expect": "== True",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "benchmark: lift_ok_frac",
+   "value": 0.99727,
+   "expect": ">= 0.98",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "benchmark: hg19 base == hg38 base",
+   "value": 0.99845,
+   "expect": ">= 0.995",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "benchmark: 21-mer identical",
+   "value": 0.9983,
+   "expect": ">= 0.97",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "benchmark: CONTROL base at pos38+1",
+   "value": 0.245,
+   "expect": "<= 0.5",
+   "passed": true,
+   "control": true,
+   "detail": ""
+  },
+  {
+   "name": "benchmark: CONTROL 21-mer at pos38+1",
+   "value": 0.0,
+   "expect": "<= 0.05",
+   "passed": true,
+   "control": true,
+   "detail": ""
+  },
+  {
+   "name": "benchmark: mean 1001-bp window identity",
+   "value": 0.9992,
+   "expect": ">= 0.95",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "benchmark: frac windows >= 0.99 identical",
+   "value": 0.9955,
+   "expect": ">= 0.9",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "benchmark: every ok row's chromosome is in hg38.fa",
+   "value": true,
+   "expect": "== True",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "benchmark: recorded ref allele == hg38 base",
+   "value": 0.99845,
+   "expect": ">= 0.99",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  }
+ ],
+ "info": {
+  "sites: status_counts": {
+   "minus_strand": 895,
+   "ok": 1361122,
+   "other_chrom": 76,
+   "unmapped": 19
+  },
+  "benchmark: status_counts": {
+   "minus_strand": 320,
+   "no_hg38_chrom": 2,
+   "ok": 183679,
+   "other_chrom": 57,
+   "unmapped": 123
+  }
+ }
+}

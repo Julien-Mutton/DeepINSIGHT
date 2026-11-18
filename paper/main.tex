@@ -1,0 +1,710 @@
+% DeepINSIGHT report, v6.
+% Build:  python -m deepinsight paper   (or: cd paper && tectonic main.tex)
+% Every number is traced to a recorded output file in NUMBERS.md. File-level detail (paths, step
+% codes, file formats) lives in docs/DATA_FLOW.md, not here. Notes for the authors are
+% \authornote{...} (red); \renewcommand{\authornote}[1]{} hides them.
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=1.9cm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{booktabs,tabularx}
+\usepackage{multicol}
+\usepackage{xcolor}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{caption}
+\usepackage[compact]{titlesec}
+\usepackage[colorlinks=true,linkcolor=black,citecolor=black,urlcolor=blue!50!black]{hyperref}
+\captionsetup{font=small,labelfont=bf,labelsep=period}
+\makeatletter\g@addto@macro\UrlBreaks{\do\_\do\-\do\.}\makeatother
+\newcommand{\file}[1]{\nolinkurl{#1}}
+\newcommand{\authornote}[1]{{\color{red!70!black}\small [Authors: #1]}}
+\setlength{\textfloatsep}{10pt plus 2pt minus 2pt}
+\setlength{\parskip}{2pt}
+\renewcommand{\topfraction}{0.9}\renewcommand{\bottomfraction}{0.8}\renewcommand{\textfraction}{0.1}\renewcommand{\floatpagefraction}{0.8}
+\setcounter{topnumber}{3}\setcounter{totalnumber}{4}
+\titlespacing*{\paragraph}{0pt}{3pt}{0.6em}
+
+\begin{document}
+
+\begin{center}
+{\LARGE\bfseries DeepINSIGHT: A Temporal Regulatory Disentanglement Framework\\[2pt] for Non-Coding Variant Interpretation\par}
+\vspace{8pt}
+{\large Julien V. Mutton$^{1}$, Troy M. LaPolice$^{2}$, Anthony Kwong$^{1}$, Shaun Mahoney$^{3}$, Christian D. Huber$^{1,*}$\par}
+\vspace{5pt}
+{\small
+$^{1}$Pennsylvania State University, Department of Biology, University Park, PA 16802, USA\\
+$^{2}$Princeton University, Department of Ecology \& Evolutionary Biology, Princeton, NJ 08544, USA\\
+$^{3}$Pennsylvania State University, Department of Biochemistry and Molecular Biology, University Park, PA 16802, USA\\[3pt]
+$^{*}$Correspondence: Christian D. Huber, M\"uller Laboratory, Room 512A, University Park, PA 16802, USA.
+Email: \href{mailto:cdh5313@psu.edu}{cdh5313@psu.edu}\par}
+\end{center}
+
+\authornote{Title: no analysis supports ``Temporal'' or ``Disentanglement''. All results use a 0.1\% sample of sites.}
+
+%==================================================================================================
+\section*{Abstract}
+Most variants linked to human disease lie outside genes, where their effects are hard to predict.
+LINSIGHT scores each non-coding site by the probability that mutations there are removed by natural
+selection, learned from human genetic variation and human--chimpanzee differences through 48
+pre-computed genomic annotations, without disease labels. Genomic language models read DNA sequence
+directly, but whether they add anything to LINSIGHT has not been tested. We rebuilt LINSIGHT from its
+original data and code, then gave it one extra input: either a HyenaDNA embedding of the DNA around
+each site, or a short code of that embedding learned by a sparse autoencoder. Nothing else changed.
+Each extra input was compared with control inputs of the same size, such as random numbers. The
+rebuilt LINSIGHT reproduced the published model. On the HGMD disease-variant benchmark, neither
+sequence input improved on LINSIGHT; the full embedding made it worse. Neither input helped the model
+predict evolutionary data on withheld parts of the genome. Simulations show that this second test is
+too weak at our sample size to detect a modest effect, so a larger sample is needed before the
+evolutionary question can be answered.
+
+%==================================================================================================
+\section*{Introduction}
+Most disease-associated variants are non-coding and act on gene regulation, so their effects are
+hard to read. One family of methods combines pre-computed annotations. CADD and GWAVA train classifiers on them. LINSIGHT instead fits them to evolutionary data. It builds on INSIGHT, a population-genetic model that compares variation within humans
+(polymorphism) and differences from the human--chimpanzee ancestor (divergence) at a set of sites with
+the same quantities at nearby neutral sites. A site under purifying selection shows fewer variants
+than its neutral neighbours. LINSIGHT turns the probability that a site is under selection, written
+$\rho$, into a function of 48 annotations: conservation scores, predicted binding sites and regional
+functional genomics. Because it is never shown disease labels, it needs no training set of pathogenic
+variants. It outperformed CADD and GWAVA on regulatory variants from HGMD, the Human Gene Mutation
+Database. It never reads the DNA sequence itself, so
+anything the 48 annotations miss is invisible to it.
+
+A second family reads sequence: supervised models learn pathogenicity or experimental tracks from DNA, and genomic language models such as HyenaDNA learn the statistics of the genome without labels. These models do not use
+population-genetic data, although for coding variants combining a language model with population data
+has worked well.
+
+We ask one question: \emph{does a genomic language model's reading of the DNA around a site add
+information to LINSIGHT?} We keep LINSIGHT's model and training objective and change only its input. Each model gets the 48 annotations plus at most one added block: the
+HyenaDNA embedding, or a sparse autoencoder code of it, or a control block of the same size. We judge
+each model in two ways: on the HGMD benchmark that LINSIGHT was published on, and by how well it
+predicts evolutionary data in parts of the genome held back from training.
+
+
+%==================================================================================================
+\section*{Results}
+
+\subsection*{The rebuilt LINSIGHT reproduces the published model}
+Our reader of the INSIGHT data gives exactly the same numbers as the authors' preparation program,
+and our training code matches the authors' program parameter for parameter at every training pass on
+test data. Run on all sites, the
+authors' program reproduces the AUROCs of the published score track to four decimals
+(Table~\ref{tab:hgmd}, second row). Retrained by us on a 0.1\% sample of sites, LINSIGHT matched the published model on the
+region-matched negative set and was about 0.01 lower on the other two (Table~\ref{tab:hgmd}).
+
+The authors' procedure runs a fixed 20 passes over the data. On our sample it stops far from the best
+fit: the weights point the same way as the published ones but are much smaller (14\% of their size).
+We therefore also fitted every model to convergence (``exact fit'', Methods) for the withheld-genome
+test.
+
+\subsection*{HGMD benchmark: neither sequence input improves LINSIGHT}
+The benchmark asks whether a model scores 1,564 disease-causing regulatory variants from HGMD above
+common variants. There are three sets of common variants (negatives): \emph{unmatched}, random
+across the genome; \emph{TSS-matched}, at the same distance from a gene start as the disease variants;
+and \emph{region-matched}, within 1\,kb of a disease variant. The matched sets are harder because they
+remove easy location clues. We measure accuracy by the AUROC, the probability that a random disease
+variant scores higher than a random negative (0.5 is chance, 1 is perfect). The benchmark was read once,
+after the analysis plan was fixed (Methods).
+
+No model with a sequence input scored above LINSIGHT on any negative set (Table~\ref{tab:hgmd}). The full embedding lowered the AUROC on all three sets, and on two of them it
+did worse than 256 random numbers, so its information made the model worse than noise. The
+autoencoder code lowered the AUROC on the unmatched and TSS-matched sets and was level with LINSIGHT on
+the region-matched set. It did better than the full embedding on every set, but it was not better than
+64 random numbers on any set, so its advantage over the embedding can be explained by its having fewer
+columns. The positive control, which moves one of LINSIGHT's own annotations into the added
+block, stayed within 0.004 of LINSIGHT, which shows that the added block can carry a real signal.
+
+\begin{table}[t]
+\centering\small
+\caption{\textbf{HGMD AUROC of every model}, by negative set (models fitted with the authors'
+procedure; score = mean $\rho$ of three training runs). Higher is better. The first two rows are the
+published model; the others were trained on the 0.1\% sample. Italics: control models.}
+\label{tab:hgmd}
+\begin{tabular}{@{}lccc@{}}
+\toprule
+Model & Unmatched & TSS-matched & Region-matched \\
+{\footnotesize (number of negatives)} & {\footnotesize (159,765)} & {\footnotesize (15,346)} & {\footnotesize (4,722)} \\
+\midrule
+Published LINSIGHT, as reported by Huang et al.\ & 0.897 & 0.759 & 0.660 \\
+Published LINSIGHT score track, scored by us & 0.898 & 0.762 & 0.665 \\
+\textbf{LINSIGHT (48 features), retrained} & \textbf{0.887} & \textbf{0.748} & \textbf{0.664} \\
+\quad \emph{+ positive control} & 0.884 & 0.745 & 0.663 \\
+\quad + HyenaDNA embedding (256) & 0.725 & 0.683 & 0.647 \\
+\quad \emph{+ random columns (256)} & 0.827 & 0.719 & 0.654 \\
+\quad + autoencoder code (64) & 0.824 & 0.731 & 0.665 \\
+\quad \emph{+ random columns (64)} & 0.849 & 0.730 & 0.657 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+
+\subsection*{Withheld genome: no sequence input improves the fit}
+This test needs no disease labels. Each model is fitted on half of the genome, split into 1-Mb blocks.
+It is then asked how probable it finds the real polymorphism and divergence data on the withheld blocks.
+A model that has learned something true about selection gives the withheld data a higher probability
+than LINSIGHT does. No sequence input made the withheld data more probable than LINSIGHT did (Table~\ref{tab:heldout}). The
+embedding did slightly worse than LINSIGHT, and significantly worse than 256 random numbers. None of the
+three autoencoder codes differed from LINSIGHT or from its controls. The positive control was
+indistinguishable from LINSIGHT, as it should be, because it carries the same information.
+
+One model without any sequence input did change the fit. Replacing the 48 annotations with a 32-number
+autoencoder code of the annotations themselves made the withheld data more probable than LINSIGHT
+did. On the separate set of sites used for choosing models, the same model was worse than LINSIGHT.
+The two results disagree, so we treat this as a result to re-test on a larger sample.
+
+\begin{table}[t]
+\centering\small
+\caption{\textbf{Withheld-genome test} (exact fit). Estimate: whether the model gave the real data on
+612,686 withheld sites a higher (better) or lower (worse) probability than the model it is compared
+with. $p$: two-sided, paired bootstrap over 1,187 withheld 1-Mb blocks, not adjusted for the 22
+comparisons. Verdict: better or worse only if $p<0.05$.}
+\label{tab:heldout}\setlength{\tabcolsep}{5pt}
+\begin{tabular}{@{}llccc@{}}
+\toprule
+Model & Compared with & Estimate & $p$ & Verdict \\
+\midrule
++ HyenaDNA embedding (256) & LINSIGHT & worse & 0.12 & no difference \\
+ & random columns (256) & worse & 0.04 & \textbf{worse} \\
+ & shuffled embedding & worse & 0.29 & no difference \\
+ & composition (4 numbers) & worse & 0.08 & no difference \\
++ autoencoder code (32) & LINSIGHT & better & 0.99 & no difference \\
+ & random columns (32) & worse & 0.46 & no difference \\
+ & shuffled code & better & 0.53 & no difference \\
++ autoencoder code (64) & LINSIGHT & better & 0.29 & no difference \\
++ autoencoder code (128) & LINSIGHT & better & 0.26 & no difference \\
++ positive control & LINSIGHT & worse & 0.25 & no difference \\
+\midrule
+Annotation code replacing the 48 annotations & LINSIGHT & better & $<0.0001$ & \textbf{better} \\
+48 annotations + annotation code & LINSIGHT & better & 0.27 & no difference \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection*{The withheld-genome test is too weak at this sample size}
+To learn how large an effect the test can detect, we simulated evolutionary data on the real sites in
+which the embedding truly shifts each site's selection score, and ran the full fit and test on each
+simulated genome (Methods). The planted effect is expressed relative to the spread (standard deviation)
+of LINSIGHT's own score across sites.
+
+The test missed almost every planted effect (Table~\ref{tab:power}). Even when the embedding shifted
+the true score by 23\% of the spread of LINSIGHT's score, it was detected in only one of five simulated
+genomes. In simulated genomes with no effect, the test wrongly called the embedding better in 2 of 20
+and random numbers better in 4 of 20, more often than the 1 in 40 expected by chance. At 0.1\% of
+sites, an unchanged fit to withheld genome therefore does not show that sequence carries no
+evolutionary information.
+
+\begin{table}[t]
+\centering\small
+\caption{\textbf{Power of the withheld-genome test} in simulated genomes with a known sequence effect.}
+\label{tab:power}
+\begin{tabular}{@{}lcccccc@{}}
+\toprule
+Planted effect, \% of the spread of LINSIGHT's score & 0 & 1.5 & 2.9 & 5.8 & 12 & 23 \\
+Simulated genomes & 20 & 5 & 5 & 5 & 5 & 5 \\
+Embedding called better & 2 & 0 & 1 & 0 & 1 & 1 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+%==================================================================================================
+\section*{Discussion}
+At the 0.1\% sample, a HyenaDNA reading of the surrounding DNA did not improve LINSIGHT on either test.
+The autoencoder code limited the damage done by the full embedding, but no more than random numbers of
+its size did, so the compression appears to help by adding fewer columns, not sequence information. Only
+the matched controls make this distinction possible. The withheld-genome test could not have detected a
+modest effect, so the evolutionary question remains open. Alignment-aware language models, which see evolution directly,
+are a natural next encoder.
+
+\emph{Limitations.} One language model, one window size and one way of averaging its output;
+polymorphism from 54 individuals; annotations on the hg19 genome and sequence on
+hg38, joined by coordinate conversion; 1,564 disease variants; the HGMD read covers only models fitted
+with the authors' procedure.
+
+\paragraph{Remaining work.}
+(i) Repeat every step on a 1\% sample of sites (which contains the 0.1\% sample), after widening the
+range of the annotation prior, whose chosen value lies at the edge of the range tried, and measure
+power again. (ii) A second, single HGMD read of the exactly fitted models; its plan is written and has
+not been run. (iii) Confirm or reject the annotation-autoencoder result on the larger sample. (iv) Try
+the alignment-aware encoder GPN-MSA, which needs a GPU. (v) Fill in the title,
+contributions, funding and code link.
+
+%==================================================================================================
+\section*{Methods}
+
+\subsection*{Method overview}
+DeepINSIGHT asks whether the DNA sequence around a site tells LINSIGHT something its 48 annotations do
+not. LINSIGHT scores each non-coding site with $\rho$, the probability that a new mutation there would be
+removed by purifying selection. It computes $\rho$ from a linear combination of 48 genomic annotations and
+learns the weights from evolutionary data alone: how often the site is polymorphic in humans and whether it
+changed since the human--chimpanzee ancestor, compared with nearby neutral DNA. We keep that model and its
+likelihood unchanged and add one block of sequence features to its input. A
+pretrained genomic language model, HyenaDNA, reads the 1,001 bases around each site and summarises them as
+256 numbers (the embedding). The embedding is appended to the 48 annotations either as it is or after a
+sparse autoencoder has compressed it to 32, 64 or 128 numbers. Every model is fitted on the same sampled
+sites with the same likelihood, and every added block is paired with a control block of the same width
+that carries no sequence information (random or shuffled values). The fitted models then score two kinds
+of held-out data: regulatory disease variants from HGMD against common variants (AUROC), and the
+evolutionary data of genome blocks never used in fitting (likelihood). A sequence input helps only if it
+beats both LINSIGHT and its own control. The pipeline is a chain of numbered steps
+(\file{s00}--\file{s11}); each step reads named files, writes named files and a \file{checks.json} with
+measured checks, and the next step refuses to start unless those checks pass.
+
+\paragraph{Where files are.} Paths are relative to the project repository. Original inputs are given at
+their location under \file{data/} (see \file{data/README.md} for how to obtain them); every file the pipeline writes is under
+$R=$\,\file{outputs/rate_0.001/}, in a folder named after the step that wrote it
+(e.g.\ \file{R/s02_sites/sites.npz}). Positions are on hg19 unless stated otherwise. A complete
+file-by-file map is in \file{docs/DATA_FLOW.md}.
+
+%--------------------------------------------------------------------------------------------------
+\subsection*{Data Sources}
+
+\paragraph{Description of the datasets used.} Nine original inputs are read and never modified
+(Table~\ref{tab:sources}). Each is described below by what it is, where it came from, what one record looks
+like, and what the pipeline uses it for.
+
+\begin{table}[t]
+\centering\footnotesize
+\caption{\textbf{Original inputs.} ``Used by'' names the pipeline steps that read the file
+(see Data Preprocessing). All nine are read-only.}
+\label{tab:sources}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{2.55cm} >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}p{3.6cm} >{\raggedright\arraybackslash}p{3.0cm}@{}}
+\toprule
+Dataset & File in the repository & Obtained from & Used by \\
+\midrule
+INSIGHT database & \file{data/linsight/INSIGHT_database.ins} (text, 58.2\,GB) & LINSIGHT authors, \file{compgen.cshl.edu/LINSIGHT/INSIGHT_database.ins.gz} & \file{s02}: the sites and their evolutionary data \\
+48 LINSIGHT annotations & \file{data/linsight/genomic_feature.bed} (BED, 28.2\,GB) & LINSIGHT authors, \file{compgen.cshl.edu/LINSIGHT/genomic_feature.bed.gz} & \file{s04}: the 48 input columns \\
+Published LINSIGHT scores & \file{data/linsight/LINSIGHT.bw} (bigWig, 1.4\,GB) & LINSIGHT authors, \file{compgen.cshl.edu/LINSIGHT/LINSIGHT.bw} & \file{s01}, \file{s04}: reference scores \\
+LINSIGHT programs & \file{third_party/linsight_cpp/} (\file{L-INSIGHT-prep.cpp}, \file{L-INSIGHT-fit.cpp}) & \file{github.com/CshlSiepelLab/LINSIGHT} (commit f28b163) & specification of parsing and fitting; baseline check \\
+HGMD benchmark & \file{data/benchmark/} \file{hgmd_reg.pandas}, \file{unmatched.pandas}, \file{matched_by_tss.pandas}, \file{matched_by_region.pandas} & GWAVA v1.0 release, as used by LINSIGHT & \file{s01}: disease and common variants \\
+hg19 genome & \file{data/genomes/hg19.fa} (FASTA, 3.2\,GB) & UCSC & \file{s01}--\file{s03}, \file{s06b}: base checks, composition \\
+hg38 genome & \file{data/genomes/hg38.ml.fa} (FASTA, 3.1\,GB) & HyenaDNA data instructions & \file{s03}, \file{s06}: DNA windows \\
+hg19$\to$hg38 chain & \file{data/genomes/hg19ToHg38.over.chain.gz} & UCSC liftOver & \file{s03}: coordinate conversion \\
+HyenaDNA medium-160k & \file{data/hyenadna/hyenadna-medium-160k-seqlen/} (\file{weights.ckpt}, \file{config.json}); code in \file{third_party/hyena_dna/} & \file{huggingface.co/LongSafari/hyenadna-medium-160k-seqlen}; \file{github.com/HazyResearch/hyena-dna} (commit d553021) & \file{s05}, \file{s06}: the embedding \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\emph{INSIGHT database.} This is the input file of the LINSIGHT paper: the
+polymorphism and divergence data its authors prepared for INSIGHT and fitted
+LINSIGHT to. It is a plain-text file with three kinds of line:
+\begin{center}\footnotesize
+\begin{tabular}{@{}l@{}}
+\texttt{samples\ \ 108}\\
+\texttt{block\ \ chr1:832500-837500\ \ theta\ \ 1.460239175e-03\ \ lambda\ \ 2.809890080e-03}\\
+\texttt{site\ \ \ chr1:834081\ \ M\ \ 9.9991399050e-1}\\
+\texttt{site\ \ \ chr1:834100\ \ L\ \ 9.9991399050e-1\ \ 7.6931202784e-5}
+\end{tabular}
+\end{center}
+The first line gives the number of sampled chromosomes, 108 (54 unrelated individuals sequenced by Complete
+Genomics). A \texttt{block} line opens a genomic interval and gives its neutral
+polymorphism rate $\theta$ and neutral divergence rate $\lambda$, estimated by the authors from nearby
+neutral DNA. Each \texttt{site} line that follows is one usable nucleotide in that interval: its position,
+its polymorphism class in the 54 individuals (\texttt{M} monomorphic, \texttt{L} low-frequency or \texttt{H}
+high-frequency polymorphism), and the probability that the ancestral allele, inferred from the chimpanzee,
+orangutan and rhesus macaque genomes, is the major allele (and, for polymorphic sites, the minor allele). The
+authors had already removed sites failing their quality filters (for example simple repeats, recent
+transposable elements and segmental duplications); we applied no further filter
+of this kind. The file contains 1,540,791,804 autosomal sites: 99.51\% \texttt{M}, 0.39\% \texttt{L} and
+0.10\% \texttt{H}.
+
+\emph{48 LINSIGHT annotations.} The genomic features LINSIGHT was trained on, as released by its authors:
+conservation scores (phyloP, phastCons, SiPhy, CEGA), predicted transcription-factor and RNA binding sites,
+and regional annotations from ENCODE, Roadmap Epigenomics, FANTOM5 and GENCODE.
+The file is a tab-separated BED file sorted by chromosome and start. After a header line, each line is one
+hg19 interval over which all 48 values are constant: \texttt{chrom}, \texttt{start} (0-based),
+\texttt{end}, then 48 numbers, e.g.\ \texttt{chr1\ \ 9996\ \ 10003\ \ 0\ \ 0\ \ \dots\ \ 0.21\ \ 1\ \ 0\ \dots}
+A position takes the values of the interval with $\texttt{start}\le p<\texttt{end}$; a position in no
+interval has no annotations.
+
+\emph{Published LINSIGHT scores.} The genome-wide LINSIGHT track ($\rho$ at every scored hg19 base) in
+bigWig format, as distributed by the authors. It is not an input to any model; it is the reference that
+our benchmark preparation and our recovered weights must reproduce.
+
+\emph{LINSIGHT programs.} The authors' C\texttt{++} code: \file{LINSIGHT-prep} converts the INSIGHT database
+to binary per-chromosome files, \file{LINSIGHT-fit} fits the weights. We read it as the specification
+(parsing rules, constants, matching of sites to annotations, the fitting procedure) and ran it once on all
+sites as the baseline check described under Evaluation.
+
+\emph{HGMD benchmark.} The disease-variant benchmark of GWAVA, which LINSIGHT's
+authors took directly from GWAVA for their own evaluation. It consists of four
+Python-2 pandas tables (``pickles''); each row is one variant, indexed by its identifier (e.g.\
+\texttt{CR000229} for an HGMD entry), with \texttt{chr}, \texttt{start} (0-based hg19), \texttt{end}
+(${}=\texttt{start}+1$), 147 GWAVA annotation columns that we do not use, four one-hot columns
+\texttt{seq\_A}, \texttt{seq\_C}, \texttt{seq\_G}, \texttt{seq\_T} giving the reference base, and the label
+\texttt{cls}. \file{hgmd_reg.pandas} holds 1,614 regulatory disease variants from HGMD (\texttt{cls}${}=1$). The three negative sets are common variants (minor-allele
+frequency above 1\% in the 1000 Genomes Project; \texttt{cls}${}=0$): \file{unmatched.pandas}
+(161,400 variants drawn at random, 100 per disease variant), \file{matched_by_tss.pandas} (16,140 variants
+matched to the disease variants by distance to the nearest transcription start site) and
+\file{matched_by_region.pandas} (5,027 variants within 1\,kb of a disease variant). The three sets are
+increasingly hard: the closer a negative lies to a disease variant, the more of its local context it shares.
+The same folder holds two ClinVar sets, which we did not use (see below).
+
+\emph{Genomes and chain file.} The hg19 FASTA (UCSC, soft-masked: repeats in lower case) is the assembly of
+every input above. The hg38 FASTA is the one HyenaDNA was pretrained on, taken from HyenaDNA's data
+instructions; it holds chr1--22 and chrX. The UCSC chain file \file{hg19ToHg38.over.chain.gz} maps hg19
+coordinates to hg38.
+
+\emph{HyenaDNA.} The released medium-160k checkpoint (\file{weights.ckpt}, 109.6\,MB; \file{config.json}: 8
+layers, 256 numbers per base) and the official model code, copied unchanged with its BSD-3 licence.
+
+\paragraph{Data origin and selection criteria.} Every input is a public release, used as distributed.
+Each was compared with its upstream copy before use (step \file{s00}, \file{R/s00_inputs/checks.json}): the
+INSIGHT database by the SHA-256 of the decompressed upstream file; the annotation file byte for byte with a
+fresh download; the score track by its byte size (1,395,672,914); the chain file by its UCSC MD5 checksum;
+the HyenaDNA weights by the SHA-256 recorded on HuggingFace; the two genomes by the length of every autosome
+against UCSC. The inputs were chosen for these reasons. (i) The INSIGHT database, annotations, scores and
+programs are exactly what LINSIGHT was built from, so any difference between our models and LINSIGHT is
+due to the added sequence input and not to different data. (ii) The HGMD benchmark is the one LINSIGHT was
+published on, with published AUROCs (0.897, 0.759 and 0.660 for the three negative sets) that our
+preparation must reproduce. Only regulatory HGMD variants are positives, and only the three negative sets
+LINSIGHT used are negatives. The ClinVar files in the same folder (194 disease variants) were not used; this
+study evaluates on HGMD only. (iii) hg38 is used only for HyenaDNA, because the model was trained on hg38;
+everything else stays on hg19, the assembly of all LINSIGHT inputs. (iv) HyenaDNA medium-160k is a released checkpoint pretrained on hg38 with single-base tokens, so every
+base of the window is its own token; we used 1,001 of its 160,000 bases of context. (v) Sites are autosomal only, as the INSIGHT database is. The benchmark is kept as published,
+including its 6,427 variants on chrX and chrY; the chrY variants drop out at the hg38 conversion because
+the hg38 file has no chrY.
+
+%--------------------------------------------------------------------------------------------------
+\subsection*{Data Preprocessing}
+
+Preprocessing runs as steps \file{s01}--\file{s06b} of the pipeline. Table~\ref{tab:funnel} shows how many
+rows survive each step; Table~\ref{tab:files} lists every file the steps write, with its shape.
+
+\begin{table}[t]
+\centering\footnotesize
+\caption{\textbf{Rows kept at each preprocessing step.} Sites are rows of \file{R/s02_sites/sites.npz};
+benchmark variants are rows of \file{R/s01_benchmark/panel.csv.gz}. Rows removed after \file{s02} stay in
+the files and are flagged, so every file keeps the same rows in the same order.}
+\label{tab:funnel}
+\begin{tabularx}{\textwidth}{@{}l >{\raggedright\arraybackslash}X r r@{}}
+\toprule
+Step & Rule & Sites & Benchmark variants \\
+\midrule
+input & all autosomal sites of the INSIGHT database; all rows of the four benchmark tables & 1,540,791,804 & 184,181 \\
+\file{s02} sampling & keep a site if a fixed hash of (chromosome, position) is below 0.001 & 1,542,881 & -- \\
+\file{s02} exclusion & remove sites within 1,000 bases of any benchmark variant & 1,362,112 & -- \\
+\file{s03} hg38 conversion & keep unique, same-chromosome, same-strand conversions & 1,361,122 & 183,679 \\
+\file{s04} annotations & keep rows inside an annotated interval & 1,342,159 & 181,398 \\
+\file{s06}, \file{s06b} & keep rows with a finite embedding and composition (no row lost) & 1,342,159 & 181,398 \\
+\file{s01} label conflict & remove the common variant at the position of a disease variant & -- & 181,397 \\
+\midrule
+usable rows & sites: 660,061 training, 69,412 \texttt{select}, 612,686 \texttt{eval} & 1,342,159 & 181,397 \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\paragraph{Data cleaning and filtering.}
+\emph{Benchmark (\file{s01_benchmark.py}).} The four pickles need pandas 0.13 under Python 2, so a small
+script run in that environment exports only the columns we use (identifier, \texttt{chr}, \texttt{start},
+\texttt{end}, \texttt{cls}, the four one-hot base columns) as text; the 147 GWAVA annotation columns are
+dropped. The reference base is decoded from the one-hot columns (\texttt{N} if they are not exactly one 1).
+The four tables are stacked into one panel, \texttt{label} = 1 for \file{hgmd_reg} and 0 otherwise, keeping
+\texttt{start} as the hg19 position \texttt{pos19}. One common variant lies at the same position as a
+disease variant; it is flagged (\texttt{label\_conflict}) and excluded from every evaluation. The published
+LINSIGHT score is read from the bigWig at \texttt{pos19}. \emph{Checks:} the counts equal 1,614, 161,400,
+16,140 and 5,027; the decoded reference base equals the hg19 base at \texttt{pos19} for 100\% of variants
+(24.6\% one base off, so the coordinate convention is confirmed); the published scores reproduce the
+published AUROCs to within 0.01 (0.898, 0.762, 0.664).
+
+\emph{Sites (\file{s02_sites.py}).} The 58-GB INSIGHT database is parsed in 200 parallel chunks with the
+rules of the authors' \file{LINSIGHT-prep}. Each site becomes five numbers: an allele-frequency code (0 for
+\texttt{M}, 0.05 for \texttt{L}, 0.5 for \texttt{H}), the two ancestral-allele probabilities (the minor one
+is 0 for \texttt{M}), $\theta a$ and $\lambda$ of its block, where $a=\sum_{k=1}^{107}1/k=5.2547$ is
+Watterson's constant for 108 chromosomes and both rates are raised to at least $10^{-5}$, as the authors'
+program does. \emph{Sampling:} a site is kept if a SplitMix64 hash of (chromosome index, position), read as
+a number in $[0,1)$, is below the sampling rate 0.001. The hash does not depend on the order of reading, so
+any run gives the same 1,542,881 sites, and the sample at a rate of 0.001 is contained in the sample at
+0.01. \emph{Exclusion:} sites within 1,000 bases of any benchmark variant are removed (11.7\%), so that no
+site's 1,001-base DNA window overlaps a benchmark variant's window and the benchmark cannot leak into
+fitting; 1,362,112 sites remain. \emph{Split:} the genome is cut into 1-Mb hg19 blocks and whole blocks are
+assigned at random, because neighbouring sites share their neutral rates and annotations. For the
+likelihood analysis about half of the blocks are held out; one tenth of the held-out blocks form the
+\texttt{select} set, used only to choose settings, and the rest the \texttt{eval} set, used only for the
+final test (670,261 training, 70,332 \texttt{select}, 621,519 \texttt{eval} sites). The HGMD analysis used
+an earlier split of the same sites with 10\% of blocks held out (1,212,074 training sites).
+\emph{Checks:} the kept fraction is within 0.2\% of the rate (ratio 1.0014); the proportions of
+\texttt{M}, \texttt{L} and \texttt{H} equal those of the whole file; the INSIGHT positions are 0-based (read
+that way, 0.0\% of sites lie in a CpG dinucleotide, against 0.73\% and 0.79\% when read one base to either
+side); no block is on both
+sides of the split; every chromosome has sites in every set; the nearest kept site is 1,006 bases from any
+benchmark variant.
+
+\emph{Conversion to hg38 (\file{s03_liftover.py}).} Every site and benchmark variant is converted with the
+UCSC chain file (pyliftover). A conversion is accepted only if it is unique, lands on the same chromosome and
+keeps the strand. Rejected: 895 sites and 320 variants that map to the minus strand, 76 and 57 that map to
+another chromosome, 19 and 123 that do not map, and 2 variants on chrY, which the hg38 file lacks.
+\emph{Checks:} the base at the converted position equals the hg19 base for 100\% of sites and 99.85\% of
+variants, and the whole 1,001-base windows agree at 99.98\% and 99.92\% of bases; the same test one base
+off fails, as it must.
+
+\emph{The 48 annotations (\file{s04_features.py}).} The 28-GB annotation file is read once, chromosome by
+chromosome, and the 48 values are attached to every site and variant by the matching rule of the authors'
+\file{LINSIGHT-fit} ($\texttt{start}\le p<\texttt{end}$). Sites are matched at their INSIGHT position, as
+the authors' program does, and benchmark variants at \texttt{pos19}. Values were found for 98.6\% of sites
+and 98.8\% of variants; the others lie outside every annotated interval and are dropped.
+\emph{Check:} the published score is an exact function of the 48 values, so inverting its link
+($u=-\log(-\log\rho/3)$) and regressing $u$ on the 48 values over the benchmark variants recovers the
+published weights without any label ($R^2=1.000$). These weights reproduce the published score to within
+0.002 at every variant and site, against about 20\% of rows when other rows' annotations are used.
+
+\paragraph{Data formatting and preparation.}
+\emph{DNA windows and tokens (\file{s06_embed.py}).} For each converted site and variant, the 1,001 hg38
+bases centred on it (index 500 is the site) are read from \file{hg38.ml.fa}. Bases are mapped to HyenaDNA's
+token ids (\texttt{A}, \texttt{C}, \texttt{G}, \texttt{T}, \texttt{N} $\to$ 7--11, case ignored, any other
+character $\to$ 6) without start or end tokens, as in HyenaDNA's hg38 pretraining. How the window is turned
+into the embedding is described under Computational Framework. The embeddings are stored with one row per
+site (\file{R/s06_embed/sites_mean.npy}, $1{,}362{,}112\times256$, float32, 1.39\,GB) and per variant
+(\file{R/s06_embed/panel_mean.npy}, $184{,}181\times256$); rows that did not convert are empty (NaN). A
+fingerprint of all windows, the weights and the window length is stored with them, and the embeddings are
+recomputed whenever it changes.
+
+\emph{Composition control (\file{s06b_composition.py}).} Four numbers per 1,001-base hg19 window, centred on
+\texttt{pos19}: GC fraction among \texttt{A}/\texttt{C}/\texttt{G}/\texttt{T}; CpG observed over expected,
+$n_{CG}\,L/(n_C\,n_G)$ with $L=1{,}001$ (0 if $n_C$ or $n_G$ is 0); share of lower-case (repeat-masked)
+bases; longest run of one base divided by $L$. They carry sequence information that needs no language
+model.
+
+\emph{Model inputs (\file{pipeline/arms.py}, checked by \file{s08_design.py}).} One function builds the input
+matrix of every model, so all models see the same rows in the same order: the 48 annotations followed by at
+most one added block (Table~\ref{tab:inputs}). Each added column is standardised with the mean and standard
+deviation of the training sites, and the same values are applied to \texttt{select} and \texttt{eval} sites
+and to benchmark variants. A row is used only if it has annotations, an accepted hg38 conversion, an
+embedding and composition values (Table~\ref{tab:funnel}); every model uses the same usable rows.
+\emph{Check:} for 300 random training sites and 300 benchmark variants, every model's input row was rebuilt
+from the original files with independent code (a separate annotation lookup, a fresh conversion, a fresh
+HyenaDNA run, reloaded autoencoders) and matched the stored row.
+
+\begin{table}[t]
+\centering\footnotesize
+\caption{\textbf{Files written by preprocessing.} $n_s=1{,}362{,}112$ sites (rows in the order of
+\file{sites.npz}); $n_p=184{,}181$ benchmark variants (rows in the order of \file{panel.csv.gz}). All paths
+are under $R$.}
+\label{tab:files}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{4.9cm} >{\raggedright\arraybackslash}X@{}}
+\toprule
+File & Content and shape \\
+\midrule
+\file{s01_benchmark/panel.csv.gz} & table, $n_p\times11$: \texttt{key, source, row\_id, chrom, pos19, end, cls, label, ref, label\_conflict, linsight\_published} \\
+\file{s02_sites/sites.npz} & \texttt{chrom} ($n_s$), \texttt{pos\_ins} (INSIGHT position), \texttt{pos19}, \texttt{evol} ($n_s\times5$: frequency code, P(ancestral${}={}$major), P(ancestral${}={}$minor), $\theta a$, $\lambda$), \texttt{role} (train / select / eval) \\
+\file{s03_liftover/sites_lift.npz}, \file{panel_lift.npz} & \texttt{pos38} and \texttt{status} (\texttt{ok}, \texttt{minus\_strand}, \texttt{other\_chrom}, \texttt{unmapped}, \texttt{no\_hg38\_chrom}) per row \\
+\file{s04_features/sites_features.npz}, \file{panel_features.npz} & \texttt{F} ($n\times48$, float32) and \texttt{found} per row \\
+\file{s04_features/published_weights.npz} & \texttt{rho\_coef}: intercept and 48 recovered published weights \\
+\file{s06_embed/sites_mean.npy}, \file{panel_mean.npy} & embeddings, $n\times256$ float32 (NaN where not converted) \\
+\file{s06b_composition/sites_comp.npy}, \file{panel_comp.npy} & composition, $n\times4$ float32 \\
+\file{s07_sae/codes_<size>_s<seed>_sites.npy}, \file{..._panel.npy} & autoencoder codes, $n\times d$ ($d=32,64,128$) for seeds 0--4; models in \file{s07_sae/*.pt} \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+%--------------------------------------------------------------------------------------------------
+\subsection*{Computational Framework}
+\paragraph{Overview of the computational approach.} The method has three parts. (1) A frozen language
+model turns the DNA around a site into a fixed-length vector. (2) An optional sparse autoencoder compresses
+that vector. (3) LINSIGHT's statistical model uses the 48 annotations plus the added vector to predict the
+site's evolutionary data. Only part (3) is trained against evolutionary data, and no part sees disease
+labels.
+
+\paragraph{Description of the model or methods used.}
+\emph{LINSIGHT.} LINSIGHT extends INSIGHT, a
+population-genetic model of one site. INSIGHT assumes that a site is either neutral or under purifying
+selection. A neutral site becomes polymorphic in humans, and diverges from the human--chimpanzee ancestor,
+at the local neutral rates $\theta$ and $\lambda$ of its block. A selected site cannot carry a common
+polymorphism, and keeps rare variants and substitutions only at a reduced rate set by a second selection
+term, $\gamma'$. Each site enters as the five numbers of \file{sites.npz}. The probability of the observed
+data is
+\begin{equation}
+P(\text{site}) = \big(A\,(B + D\,\beta_0\,\gamma') - F\big)\,\rho + F ,
+\label{eq:lik}
+\end{equation}
+where $F$ is the probability of the data if the site is neutral, $A(B + D\beta_0\gamma')$ the probability
+if it is selected ($A=0$ for a common polymorphism), and $A,B,D,F$ are fixed functions of the five numbers
+with constants $\beta=(0.757, 0.205, 0.038)$, computed exactly as in \file{L-INSIGHT-fit.cpp}. LINSIGHT
+makes the two selection quantities functions of an input vector $\mathbf{x}$:
+\begin{equation}
+\rho(\mathbf{x})=\exp\!\big(-3\,e^{-(b+\mathbf{w}^{\top}\mathbf{x})}\big),\qquad
+\gamma'(\mathbf{x})=\sigma(c+\mathbf{v}^{\top}\mathbf{x}),
+\label{eq:linsight}
+\end{equation}
+with $\sigma$ the logistic function. The weights $(b,\mathbf{w},c,\mathbf{v})$ are found by maximising
+$\sum\log P$ over training sites, so a model with $m$ input columns has $2(m+1)$ parameters (98 for the 48
+annotations). In effect LINSIGHT is a generalised linear model whose labels are replaced by a mixture
+likelihood: an annotation earns a positive weight if sites where it is high show fewer polymorphisms and
+substitutions than their neutral neighbours. The output $\rho$ is the site's score.
+
+\emph{HyenaDNA.} HyenaDNA is a genomic language model: a network trained on the
+human reference genome (hg38) to predict each nucleotide from the nucleotides before it, with one token per
+base. In place of attention, each layer uses the Hyena operator: very long
+convolutions whose filters are generated by a small network over positions, alternated with element-wise
+multiplications by projections of the input (gating). The convolutions are computed with the fast Fourier
+transform, which makes contexts of up to 160,000 bases affordable. We used the released medium-160k model
+(8 layers, a 256-number state per base) without further training. The model is causal: the state at a base
+summarises that base and the bases before it. \emph{From HyenaDNA to an embedding:} each 1,001-token window
+(see Data formatting) is passed through the frozen model in evaluation mode; the last layer gives a
+$1{,}001\times256$ matrix, and its average over positions is the embedding $\mathbf{h}\in\mathbb{R}^{256}$.
+We averaged rather than taking the state at the site because a causal state at the centre has seen only the
+500 bases on its left; the average uses both flanks. \emph{Checks (\file{s05_embedder.py}):} the model
+predicts the next base of real hg38 DNA in 43.5\% of cases against 25.3\% on random sequence; output is
+identical across runs, batch sizes and processes; changing base 501 does not change the state at base 500.
+
+\emph{Integration of LINSIGHT and HyenaDNA.} Each model's input is $\mathbf{x}=[\,\mathbf{a}\,;\,\mathbf{e}\,]$:
+the 48 annotations $\mathbf{a}$ followed by at most one added block $\mathbf{e}$ (Table~\ref{tab:inputs}),
+which is the embedding $\mathbf{h}$, a sparse code $\mathbf{z}$ of it, or a control. No model uses both
+$\mathbf{h}$ and $\mathbf{z}$. In equation~\ref{eq:linsight} the added block contributes extra weights,
+$b+\mathbf{w}_a^{\top}\mathbf{a}+\mathbf{w}_e^{\top}\mathbf{e}$, so the sequence can only shift a site's
+probability of selection up or down; with $\mathbf{w}_e=\mathbf{0}$ the model is exactly LINSIGHT.
+\emph{Sparse code (\file{s07_sae.py}).} Appending all 256 numbers raises the parameter count from 98 to 610
+in a model fitted to a 0.1\% sample of sites. A TopK sparse autoencoder compresses the
+embedding to a code in which only $k$ of $d$ entries may be nonzero:
+$\mathbf{z}=\mathrm{TopK}_k\big(\mathrm{ReLU}(W_{\mathrm{enc}}(\tilde{\mathbf{h}}-\mathbf{b}_{\mathrm{dec}})+\mathbf{b}_{\mathrm{enc}})\big)$
+and $\hat{\mathbf{h}}=W_{\mathrm{dec}}\mathbf{z}+\mathbf{b}_{\mathrm{dec}}$, where $\tilde{\mathbf{h}}$ is the
+embedding centred on the training mean and divided by one scale factor, and the columns of
+$W_{\mathrm{dec}}$ have unit length. Training minimises the squared rebuilding error plus the auxiliary term
+of Gao et al. that revives code entries unused for 500 batches (weight 1/32). Three sizes,
+$(d,k)=(32,8)$, $(64,16)$ and $(128,32)$, each with five random starts, were trained on the embeddings of
+the 669,704 training sites only, then applied to every site and variant. A code of 32--128 entries adds
+64--256 parameters, and its entries can be inspected one by one. \emph{Checks:}
+every code entry is used, and every autoencoder rebuilds held-out embeddings better than principal
+component analysis with as many components (for 32 entries, 4.9\% against 7.4\% of the variance left
+unexplained). A second autoencoder of the same kind, $(32,8)$, was trained on the 48 annotations.
+
+\begin{table}[t]
+\centering\footnotesize
+\caption{\textbf{Model inputs.} Each row is one model; ``Added block'' follows the 48 annotations. The code
+name is the model's name in the pipeline files (e.g.\ \texttt{emb\_s0} in \file{params.npz}).}
+\label{tab:inputs}
+\begin{tabularx}{\textwidth}{@{}l l c X@{}}
+\toprule
+Model & Code name & Added block & What the added block contains \\
+\midrule
+LINSIGHT (48 annotations) & \texttt{repl} & none & -- \\
++ HyenaDNA embedding & \texttt{emb} & 256 & \file{sites_mean.npy} / \file{panel_mean.npy} \\
++ autoencoder code & \texttt{sae32k8}, \texttt{sae64k16}, \texttt{sae128k32} & 32, 64, 128 & the code of the embedding, used instead of it \\
++ random columns (control) & \texttt{noise\_emb}, \texttt{noise32/64/128} & same width & $\mathcal{N}(0,1)$ numbers, fixed seeds, independent of the site \\
++ shuffled embedding or code (control) & \texttt{shuf\_emb}, \texttt{shuf\_sae*} & same width & real values given to the wrong sites \\
++ composition (control) & \texttt{comp} & 4 & \file{sites_comp.npy} / \file{panel_comp.npy} \\
++ positive control & \texttt{posctl} & 1 & the annotation with the largest published weight, moved into the added block \\
+annotation autoencoder & \texttt{fsae\_codes}, \texttt{fsae\_plus} & 32 & a code of the 48 annotations, replacing them or added to them \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\paragraph{How the model or computational method was applied.} Every model was fitted in two ways.
+(i) The \emph{authors' procedure} (\file{s09_train.py}), an exact re-implementation of \file{LINSIGHT-fit}:
+all parameters start at zero, sites are visited in random batches of 100, AdaGrad
+adapts the step size of each parameter (learning rate $10^{-3}$ for the $\rho$ weights and $10^{-2}$ for
+the $\gamma'$ weights), and the parameters after the 20th pass are kept; $\mathbf{x}$ enters both $\rho$
+and $\gamma'$. This is the procedure behind the published track and was used for the HGMD analysis: three
+runs per model with different site orders on the 10\% split, scoring each variant by the average $\rho$ of
+the three runs. (ii) The \emph{exact fit} (\file{s09b_mle.py}), used for the withheld-genome test:
+penalised maximum likelihood run to convergence with L-BFGS on the 51\% split. The
+penalty is a Gaussian prior on each weight; its width for the 48 annotation weights was chosen once, for
+LINSIGHT, on \texttt{select} sites and kept for every model, and its width for the added weights was chosen
+per model on \texttt{select} sites. Added columns enter $\rho$ only. Each fit was started from zero and from
+LINSIGHT's solution, keeping the better; models with a random block were fitted five times. The
+autoencoder size was chosen on \texttt{select} sites, never with benchmark labels: 64 for the HGMD analysis
+and 32 for the exact fit. Fitted weights are in \file{R/s09_train/params.npz} and
+\file{R/s09b_mle/params.npz} (one array per model and seed). \emph{Check:} every exact fit converged, and no
+model that contains LINSIGHT fits the training data worse than LINSIGHT. To score a benchmark variant, the
+fitted weights are applied to that variant's own $\mathbf{x}$.
+
+\paragraph{Key implementation choices and parameters.} Table~\ref{tab:settings} lists every setting.
+
+\begin{table}[t]
+\centering\footnotesize
+\caption{\textbf{Settings.} Values chosen on \texttt{select} sites are marked; nothing was tuned on the benchmark.}
+\label{tab:settings}
+\begin{tabularx}{\textwidth}{@{}l X@{}}
+\toprule
+Component & Setting \\
+\midrule
+Sites & autosomal INSIGHT sites sampled at 0.1\% by a hash of position; sites within 1 kb of a benchmark variant removed \\
+Splits & whole 1-Mb blocks; HGMD analysis 90/10 train/held-out; likelihood analysis 49/51, of which 10\% \texttt{select} \\
+Sequence window & 1,001 bp of hg38 centred on the site; tokens A, C, G, T, N; no special tokens \\
+HyenaDNA & medium-160k, 8 layers, 256-d state, weights frozen; last layer averaged over the window \\
+Autoencoder & TopK; $(d,k)\in\{(32,8),(64,16),(128,32)\}$; Adam, lr $10^{-3}$, batch 4,096, 10 passes, 5 seeds; size chosen on \texttt{select} (64 for HGMD, 32 for exact fit) \\
+Authors' procedure & zero start; batches of 100; AdaGrad, lr $10^{-3}$ ($\rho$) and $10^{-2}$ ($\gamma'$); 20 passes; 3 runs per model \\
+Exact fit & L-BFGS to convergence; Gaussian prior widths: annotations $\{0.03,\dots,10\}$ chosen once on \texttt{select}; added block $\{0.003,\dots,10\}$ chosen per model on \texttt{select} \\
+Controls & random $\mathcal{N}(0,1)$ columns, shuffled embedding or code, 4 composition values; same width as the block they control \\
+Statistics & paired cluster bootstrap, 2,000 resamples; 100-kb regions (HGMD), 1-Mb blocks (withheld genome) \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+%--------------------------------------------------------------------------------------------------
+\subsection*{Computational Reproducibility}
+\paragraph{Software and computing environment.} Python 3.10.20 with PyTorch 2.12.0 (CPU build), NumPy 2.2.6, SciPy 1.15.3,
+scikit-learn 1.7.2, pandas 2.3.3, pyliftover, pyBigWig and Matplotlib (conda environment \file{hyena-env}); the benchmark pickles are read with Python
+2.7.13 and pandas 0.13.1 (environment \file{legacy_pandas}). HyenaDNA's official model code and weights;
+the authors' LINSIGHT programs as reference. Everything ran on one 112-core CPU server without a GPU; the
+HyenaDNA embedding was the slowest step (100 processes, 16 windows per batch).
+
+\paragraph{Code and reproducibility details.} The pipeline is in this repository, with the steps in
+\file{pipeline/steps/}, the shared code in \file{src/lctx/} and the paths of the original inputs in
+\file{src/lctx/config.py}. The script \file{pipeline/run_all.sh}, called with the sampling rate (0.001), runs every step in
+order and stops at the first failed check; \file{pipeline/run_step.py} runs a single step. All
+randomness is seeded, inputs are verified against their upstream checksums, and each step writes its checks
+with measured values to \file{R/<step>/checks.json}. Our likelihood code reproduces \file{LINSIGHT-fit}
+parameter for parameter, and LINSIGHT re-fitted with the authors' program on all sites reproduces the
+published AUROCs. Every check passed except two in the power simulation, which are the low power reported in
+the Results.
+
+%--------------------------------------------------------------------------------------------------
+\subsection*{Evaluation and Benchmarking}
+\paragraph{How performance was assessed.} \emph{HGMD benchmark (\file{s10_evaluate.py}).} For each of the
+three negative sets, the AUROC was computed on all usable disease variants (1,564) and that set's usable
+common variants (159,765 unmatched, 15,346 TSS-matched, 4,722 region-matched): the probability that a
+randomly chosen disease variant has a higher $\rho$ than a randomly chosen common one. The
+analysis plan (models, comparisons, number of runs, bootstrap) was fixed and recorded before the labels were
+opened (\file{R/s10_evaluate/lock.json}), and the code refuses a second read of the same plan; the benchmark
+has been read once. Results are in \file{R/s10_evaluate/results.json}. \emph{Withheld genome
+(\file{s09b_mle.py}).} For each \texttt{eval} site we computed $\log P$ of its observed data under each fitted
+model; two models are compared by the mean difference over sites, after averaging the five fits of models
+with a random block. A better model gives the real data a higher probability. \emph{Power
+(\file{s09c_groundtruth.py}).} Using the real sites, a true score was set to LINSIGHT's fitted score plus an
+effect size times a fixed random combination of the embedding's 256 numbers; new polymorphism and divergence
+data were drawn from equation~\ref{eq:lik} with that score; every model was refitted exactly as on the real
+data and the withheld-genome test applied: 20 simulated genomes without an effect and five at each of five
+effect sizes.
+
+\paragraph{Comparison methods or baselines.} The reference is LINSIGHT with the 48 annotations alone,
+fitted with the same procedure, sites and split as every other model. As a check of the baseline itself,
+the authors' programs were run on all sites (\file{LINSIGHT-prep} on \file{INSIGHT_database.ins}, then
+\file{LINSIGHT-fit} with \file{genomic_feature.bed}, 20 passes) and their final weights applied to the
+benchmark variants; the published score track was also scored directly. Each sequence model is compared
+with LINSIGHT and with its control of the same width; the positive control checks that the added-block path
+can carry a real signal.
+
+%--------------------------------------------------------------------------------------------------
+\subsection*{Statistical Analysis}
+\paragraph{Statistical tests and summary measures.} The summary measures are the AUROC per model and
+negative set, and the mean per-site difference in $\log P$ on withheld sites. Differences between two
+models are paired: both are scored on the same variants or sites. Uncertainty comes from a cluster
+bootstrap: whole regions are resampled with replacement 2,000 times (100-kb
+regions for HGMD, 1-Mb blocks for the withheld genome, because nearby variants and sites are correlated),
+the difference is recomputed each time, and the middle 95\% of the results is the 95\% interval. A
+two-sided $p$-value is the probability of a difference at least this large if the two models were equally
+good.
+
+\paragraph{Criteria used to evaluate results.} A sequence input counts as an improvement only if its
+difference from LINSIGHT and from its same-width control are both positive with 95\% intervals that
+exclude zero. We did not correct for the 22 withheld-genome comparisons; about one $p$ below 0.05 is
+expected among them by chance, so single uncorrected results are reported as such.
+
+%==================================================================================================
+{\small
+\noindent\textbf{Author Contributions:} [we will fill this in soon]
+
+\noindent\textbf{Funding:} [Add funding] The content is solely the responsibility of the authors and
+does not necessarily represent the official views of the National Institutes of Health.
+
+\noindent\textbf{Code Availability Statement:} The DeepINSIGHT code, with per-step checks, unit tests and
+the data-flow document, can be found in the following repository: [link-here-eventually]. HGMD-derived benchmark files are not redistributed and
+must be obtained from their original sources.
+
+\noindent\textbf{Competing Interest Statement:} The authors declare no competing interest.\par}
+
+
+\end{document}

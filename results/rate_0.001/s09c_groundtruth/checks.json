@@ -1,0 +1,2380 @@
+{
+ "block": "s09c_groundtruth",
+ "ok": false,
+ "checks": [
+  {
+   "name": "world s=0.0 rep 0: all fits converged",
+   "value": true,
+   "expect": "== True",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.0 rep 0: simulator excess <= 1.5 theta*lambda bound (max)",
+   "value": 0.000486,
+   "expect": "<= 0.005",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.0 rep 0: nested emb training objective <= R0's (+1e-10)",
+   "value": -6.205821e-06,
+   "expect": "<= 1e-10",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.0 rep 0: nested sae32k8 training objective <= R0's (+1e-10)",
+   "value": -3.6845866e-05,
+   "expect": "<= 1e-10",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.0 rep 0: nested noise_emb training objective <= R0's (+1e-10)",
+   "value": -1.867254e-06,
+   "expect": "<= 1e-10",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.0 rep 1: all fits converged",
+   "value": true,
+   "expect": "== True",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.0 rep 1: simulator excess <= 1.5 theta*lambda bound (max)",
+   "value": 0.000486,
+   "expect": "<= 0.005",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.0 rep 1: nested emb training objective <= R0's (+1e-10)",
+   "value": -9.8565e-08,
+   "expect": "<= 1e-10",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.0 rep 1: nested sae32k8 training objective <= R0's (+1e-10)",
+   "value": -8.62464e-07,
+   "expect": "<= 1e-10",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.0 rep 1: nested noise_emb training objective <= R0's (+1e-10)",
+   "value": -1.28702e-07,
+   "expect": "<= 1e-10",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.0 rep 2: all fits converged",
+   "value": true,
+   "expect": "== True",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.0 rep 2: simulator excess <= 1.5 theta*lambda bound (max)",
+   "value": 0.000486,
+   "expect": "<= 0.005",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.0 rep 2: nested emb training objective <= R0's (+1e-10)",
+   "value": -1.3786301e-05,
+   "expect": "<= 1e-10",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.0 rep 2: nested sae32k8 training objective <= R0's (+1e-10)",
+   "value": -5.601e-09,
+   "expect": "<= 1e-10",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.0 rep 2: nested noise_emb training objective <= R0's (+1e-10)",
+   "value": -4.926e-08,
+   "expect": "<= 1e-10",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.0 rep 3: all fits converged",
+   "value": true,
+   "expect": "== True",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.0 rep 3: simulator excess <= 1.5 theta*lambda bound (max)",
+   "value": 0.000486,
+   "expect": "<= 0.005",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.0 rep 3: nested emb training objective <= R0's (+1e-10)",
+   "value": -7.860992e-06,
+   "expect": "<= 1e-10",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.0 rep 3: nested sae32k8 training objective <= R0's (+1e-10)",
+   "value": -2.286132e-06,
+   "expect": "<= 1e-10",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.0 rep 3: nested noise_emb training objective <= R0's (+1e-10)",
+   "value": -1.58098e-07,
+   "expect": "<= 1e-10",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.0 rep 4: all fits converged",
+   "value": true,
+   "expect": "== True",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.0 rep 4: simulator excess <= 1.5 theta*lambda bound (max)",
+   "value": 0.000486,
+   "expect": "<= 0.005",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.0 rep 4: nested emb training objective <= R0's (+1e-10)",
+   "value": -1.1932142e-05,
+   "expect": "<= 1e-10",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.0 rep 4: nested sae32k8 training objective <= R0's (+1e-10)",
+   "value": -2.7732688e-05,
+   "expect": "<= 1e-10",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.0 rep 4: nested noise_emb training objective <= R0's (+1e-10)",
+   "value": -9.09355e-07,
+   "expect": "<= 1e-10",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.0 rep 5: all fits converged",
+   "value": true,
+   "expect": "== True",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.0 rep 5: simulator excess <= 1.5 theta*lambda bound (max)",
+   "value": 0.000486,
+   "expect": "<= 0.005",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.0 rep 5: nested emb training objective <= R0's (+1e-10)",
+   "value": -1.43344e-06,
+   "expect": "<= 1e-10",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.0 rep 5: nested sae32k8 training objective <= R0's (+1e-10)",
+   "value": -2.543474e-06,
+   "expect": "<= 1e-10",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.0 rep 5: nested noise_emb training objective <= R0's (+1e-10)",
+   "value": -2.157921e-06,
+   "expect": "<= 1e-10",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.0 rep 6: all fits converged",
+   "value": true,
+   "expect": "== True",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.0 rep 6: simulator excess <= 1.5 theta*lambda bound (max)",
+   "value": 0.000486,
+   "expect": "<= 0.005",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.0 rep 6: nested emb training objective <= R0's (+1e-10)",
+   "value": -1.2859e-08,
+   "expect": "<= 1e-10",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.0 rep 6: nested sae32k8 training objective <= R0's (+1e-10)",
+   "value": -5.577e-09,
+   "expect": "<= 1e-10",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.0 rep 6: nested noise_emb training objective <= R0's (+1e-10)",
+   "value": -5.571831e-06,
+   "expect": "<= 1e-10",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.0 rep 7: all fits converged",
+   "value": true,
+   "expect": "== True",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.0 rep 7: simulator excess <= 1.5 theta*lambda bound (max)",
+   "value": 0.000486,
+   "expect": "<= 0.005",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.0 rep 7: nested emb training objective <= R0's (+1e-10)",
+   "value": -2.4520398e-05,
+   "expect": "<= 1e-10",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.0 rep 7: nested sae32k8 training objective <= R0's (+1e-10)",
+   "value": -5.997016e-06,
+   "expect": "<= 1e-10",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.0 rep 7: nested noise_emb training objective <= R0's (+1e-10)",
+   "value": -1.0369539e-05,
+   "expect": "<= 1e-10",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.0 rep 8: all fits converged",
+   "value": true,
+   "expect": "== True",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.0 rep 8: simulator excess <= 1.5 theta*lambda bound (max)",
+   "value": 0.000486,
+   "expect": "<= 0.005",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.0 rep 8: nested emb training objective <= R0's (+1e-10)",
+   "value": -9.319312e-06,
+   "expect": "<= 1e-10",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.0 rep 8: nested sae32k8 training objective <= R0's (+1e-10)",
+   "value": -1.6621056e-05,
+   "expect": "<= 1e-10",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.0 rep 8: nested noise_emb training objective <= R0's (+1e-10)",
+   "value": -9.548778e-06,
+   "expect": "<= 1e-10",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.0 rep 9: all fits converged",
+   "value": true,
+   "expect": "== True",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.0 rep 9: simulator excess <= 1.5 theta*lambda bound (max)",
+   "value": 0.000486,
+   "expect": "<= 0.005",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.0 rep 9: nested emb training objective <= R0's (+1e-10)",
+   "value": -5.2355e-08,
+   "expect": "<= 1e-10",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.0 rep 9: nested sae32k8 training objective <= R0's (+1e-10)",
+   "value": -1.2886e-08,
+   "expect": "<= 1e-10",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.0 rep 9: nested noise_emb training objective <= R0's (+1e-10)",
+   "value": -9.4127e-07,
+   "expect": "<= 1e-10",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.0 rep 10: all fits converged",
+   "value": true,
+   "expect": "== True",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.0 rep 10: simulator excess <= 1.5 theta*lambda bound (max)",
+   "value": 0.000486,
+   "expect": "<= 0.005",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.0 rep 10: nested emb training objective <= R0's (+1e-10)",
+   "value": -2.76013e-07,
+   "expect": "<= 1e-10",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.0 rep 10: nested sae32k8 training objective <= R0's (+1e-10)",
+   "value": -2.9393e-08,
+   "expect": "<= 1e-10",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.0 rep 10: nested noise_emb training objective <= R0's (+1e-10)",
+   "value": -1.3494769e-05,
+   "expect": "<= 1e-10",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.0 rep 11: all fits converged",
+   "value": true,
+   "expect": "== True",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.0 rep 11: simulator excess <= 1.5 theta*lambda bound (max)",
+   "value": 0.000486,
+   "expect": "<= 0.005",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.0 rep 11: nested emb training objective <= R0's (+1e-10)",
+   "value": -1.3436802e-05,
+   "expect": "<= 1e-10",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.0 rep 11: nested sae32k8 training objective <= R0's (+1e-10)",
+   "value": -2.3060232e-05,
+   "expect": "<= 1e-10",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.0 rep 11: nested noise_emb training objective <= R0's (+1e-10)",
+   "value": -6.8518e-08,
+   "expect": "<= 1e-10",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.0 rep 12: all fits converged",
+   "value": true,
+   "expect": "== True",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.0 rep 12: simulator excess <= 1.5 theta*lambda bound (max)",
+   "value": 0.000486,
+   "expect": "<= 0.005",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.0 rep 12: nested emb training objective <= R0's (+1e-10)",
+   "value": -5.111e-08,
+   "expect": "<= 1e-10",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.0 rep 12: nested sae32k8 training objective <= R0's (+1e-10)",
+   "value": -1.3692913e-05,
+   "expect": "<= 1e-10",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.0 rep 12: nested noise_emb training objective <= R0's (+1e-10)",
+   "value": -5.365714e-06,
+   "expect": "<= 1e-10",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.0 rep 13: all fits converged",
+   "value": true,
+   "expect": "== True",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.0 rep 13: simulator excess <= 1.5 theta*lambda bound (max)",
+   "value": 0.000486,
+   "expect": "<= 0.005",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.0 rep 13: nested emb training objective <= R0's (+1e-10)",
+   "value": -9.1645e-08,
+   "expect": "<= 1e-10",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.0 rep 13: nested sae32k8 training objective <= R0's (+1e-10)",
+   "value": -1.1185e-08,
+   "expect": "<= 1e-10",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.0 rep 13: nested noise_emb training objective <= R0's (+1e-10)",
+   "value": -1.05222e-07,
+   "expect": "<= 1e-10",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.0 rep 14: all fits converged",
+   "value": true,
+   "expect": "== True",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.0 rep 14: simulator excess <= 1.5 theta*lambda bound (max)",
+   "value": 0.000486,
+   "expect": "<= 0.005",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.0 rep 14: nested emb training objective <= R0's (+1e-10)",
+   "value": -3.74454e-07,
+   "expect": "<= 1e-10",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.0 rep 14: nested sae32k8 training objective <= R0's (+1e-10)",
+   "value": -8.78e-09,
+   "expect": "<= 1e-10",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.0 rep 14: nested noise_emb training objective <= R0's (+1e-10)",
+   "value": -7.98283e-07,
+   "expect": "<= 1e-10",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.0 rep 15: all fits converged",
+   "value": true,
+   "expect": "== True",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.0 rep 15: simulator excess <= 1.5 theta*lambda bound (max)",
+   "value": 0.000486,
+   "expect": "<= 0.005",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.0 rep 15: nested emb training objective <= R0's (+1e-10)",
+   "value": -6.8842e-08,
+   "expect": "<= 1e-10",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.0 rep 15: nested sae32k8 training objective <= R0's (+1e-10)",
+   "value": -1.6079e-08,
+   "expect": "<= 1e-10",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.0 rep 15: nested noise_emb training objective <= R0's (+1e-10)",
+   "value": -1.54066e-06,
+   "expect": "<= 1e-10",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.0 rep 16: all fits converged",
+   "value": true,
+   "expect": "== True",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.0 rep 16: simulator excess <= 1.5 theta*lambda bound (max)",
+   "value": 0.000486,
+   "expect": "<= 0.005",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.0 rep 16: nested emb training objective <= R0's (+1e-10)",
+   "value": -8.02031e-07,
+   "expect": "<= 1e-10",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.0 rep 16: nested sae32k8 training objective <= R0's (+1e-10)",
+   "value": -9.665641e-06,
+   "expect": "<= 1e-10",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.0 rep 16: nested noise_emb training objective <= R0's (+1e-10)",
+   "value": -1.893915e-06,
+   "expect": "<= 1e-10",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.0 rep 17: all fits converged",
+   "value": true,
+   "expect": "== True",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.0 rep 17: simulator excess <= 1.5 theta*lambda bound (max)",
+   "value": 0.000486,
+   "expect": "<= 0.005",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.0 rep 17: nested emb training objective <= R0's (+1e-10)",
+   "value": -1.53866e-07,
+   "expect": "<= 1e-10",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.0 rep 17: nested sae32k8 training objective <= R0's (+1e-10)",
+   "value": -2.1762e-08,
+   "expect": "<= 1e-10",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.0 rep 17: nested noise_emb training objective <= R0's (+1e-10)",
+   "value": -1.523165e-06,
+   "expect": "<= 1e-10",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.0 rep 18: all fits converged",
+   "value": true,
+   "expect": "== True",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.0 rep 18: simulator excess <= 1.5 theta*lambda bound (max)",
+   "value": 0.000486,
+   "expect": "<= 0.005",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.0 rep 18: nested emb training objective <= R0's (+1e-10)",
+   "value": -6.825193e-06,
+   "expect": "<= 1e-10",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.0 rep 18: nested sae32k8 training objective <= R0's (+1e-10)",
+   "value": -3.0087655e-05,
+   "expect": "<= 1e-10",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.0 rep 18: nested noise_emb training objective <= R0's (+1e-10)",
+   "value": -1.7736354e-05,
+   "expect": "<= 1e-10",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.0 rep 19: all fits converged",
+   "value": true,
+   "expect": "== True",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.0 rep 19: simulator excess <= 1.5 theta*lambda bound (max)",
+   "value": 0.000486,
+   "expect": "<= 0.005",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.0 rep 19: nested emb training objective <= R0's (+1e-10)",
+   "value": -6.203813e-06,
+   "expect": "<= 1e-10",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.0 rep 19: nested sae32k8 training objective <= R0's (+1e-10)",
+   "value": -1.3481569e-05,
+   "expect": "<= 1e-10",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.0 rep 19: nested noise_emb training objective <= R0's (+1e-10)",
+   "value": -1.4498928e-05,
+   "expect": "<= 1e-10",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.025 rep 0: all fits converged",
+   "value": true,
+   "expect": "== True",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.025 rep 0: simulator excess <= 1.5 theta*lambda bound (max)",
+   "value": 0.000486,
+   "expect": "<= 0.005",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.025 rep 0: nested emb training objective <= R0's (+1e-10)",
+   "value": -2.7702648e-05,
+   "expect": "<= 1e-10",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.025 rep 1: all fits converged",
+   "value": true,
+   "expect": "== True",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.025 rep 1: simulator excess <= 1.5 theta*lambda bound (max)",
+   "value": 0.000486,
+   "expect": "<= 0.005",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.025 rep 1: nested emb training objective <= R0's (+1e-10)",
+   "value": -1.2777378e-05,
+   "expect": "<= 1e-10",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.025 rep 2: all fits converged",
+   "value": true,
+   "expect": "== True",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.025 rep 2: simulator excess <= 1.5 theta*lambda bound (max)",
+   "value": 0.000486,
+   "expect": "<= 0.005",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.025 rep 2: nested emb training objective <= R0's (+1e-10)",
+   "value": -6.3485e-08,
+   "expect": "<= 1e-10",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.025 rep 3: all fits converged",
+   "value": true,
+   "expect": "== True",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.025 rep 3: simulator excess <= 1.5 theta*lambda bound (max)",
+   "value": 0.000486,
+   "expect": "<= 0.005",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.025 rep 3: nested emb training objective <= R0's (+1e-10)",
+   "value": -1.849809e-06,
+   "expect": "<= 1e-10",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.025 rep 4: all fits converged",
+   "value": true,
+   "expect": "== True",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.025 rep 4: simulator excess <= 1.5 theta*lambda bound (max)",
+   "value": 0.000486,
+   "expect": "<= 0.005",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.025 rep 4: nested emb training objective <= R0's (+1e-10)",
+   "value": -2.5731366e-05,
+   "expect": "<= 1e-10",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.05 rep 0: all fits converged",
+   "value": true,
+   "expect": "== True",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.05 rep 0: simulator excess <= 1.5 theta*lambda bound (max)",
+   "value": 0.000486,
+   "expect": "<= 0.005",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.05 rep 0: nested emb training objective <= R0's (+1e-10)",
+   "value": -1.288249e-06,
+   "expect": "<= 1e-10",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.05 rep 1: all fits converged",
+   "value": true,
+   "expect": "== True",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.05 rep 1: simulator excess <= 1.5 theta*lambda bound (max)",
+   "value": 0.000486,
+   "expect": "<= 0.005",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.05 rep 1: nested emb training objective <= R0's (+1e-10)",
+   "value": -1.727e-08,
+   "expect": "<= 1e-10",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.05 rep 2: all fits converged",
+   "value": true,
+   "expect": "== True",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.05 rep 2: simulator excess <= 1.5 theta*lambda bound (max)",
+   "value": 0.000486,
+   "expect": "<= 0.005",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.05 rep 2: nested emb training objective <= R0's (+1e-10)",
+   "value": -4.81979e-07,
+   "expect": "<= 1e-10",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.05 rep 3: all fits converged",
+   "value": true,
+   "expect": "== True",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.05 rep 3: simulator excess <= 1.5 theta*lambda bound (max)",
+   "value": 0.000486,
+   "expect": "<= 0.005",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.05 rep 3: nested emb training objective <= R0's (+1e-10)",
+   "value": -1.92813e-07,
+   "expect": "<= 1e-10",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.05 rep 4: all fits converged",
+   "value": true,
+   "expect": "== True",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.05 rep 4: simulator excess <= 1.5 theta*lambda bound (max)",
+   "value": 0.000486,
+   "expect": "<= 0.005",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.05 rep 4: nested emb training objective <= R0's (+1e-10)",
+   "value": -1.0583998e-05,
+   "expect": "<= 1e-10",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.1 rep 0: all fits converged",
+   "value": true,
+   "expect": "== True",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.1 rep 0: simulator excess <= 1.5 theta*lambda bound (max)",
+   "value": 0.000486,
+   "expect": "<= 0.005",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.1 rep 0: nested emb training objective <= R0's (+1e-10)",
+   "value": -1.5289129e-05,
+   "expect": "<= 1e-10",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.1 rep 1: all fits converged",
+   "value": true,
+   "expect": "== True",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.1 rep 1: simulator excess <= 1.5 theta*lambda bound (max)",
+   "value": 0.000486,
+   "expect": "<= 0.005",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.1 rep 1: nested emb training objective <= R0's (+1e-10)",
+   "value": -8.6356e-08,
+   "expect": "<= 1e-10",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.1 rep 2: all fits converged",
+   "value": true,
+   "expect": "== True",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.1 rep 2: simulator excess <= 1.5 theta*lambda bound (max)",
+   "value": 0.000486,
+   "expect": "<= 0.005",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.1 rep 2: nested emb training objective <= R0's (+1e-10)",
+   "value": -4.7605e-08,
+   "expect": "<= 1e-10",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.1 rep 3: all fits converged",
+   "value": true,
+   "expect": "== True",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.1 rep 3: simulator excess <= 1.5 theta*lambda bound (max)",
+   "value": 0.000486,
+   "expect": "<= 0.005",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.1 rep 3: nested emb training objective <= R0's (+1e-10)",
+   "value": -6.47487e-05,
+   "expect": "<= 1e-10",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.1 rep 4: all fits converged",
+   "value": true,
+   "expect": "== True",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.1 rep 4: simulator excess <= 1.5 theta*lambda bound (max)",
+   "value": 0.000486,
+   "expect": "<= 0.005",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.1 rep 4: nested emb training objective <= R0's (+1e-10)",
+   "value": -2.4536993e-05,
+   "expect": "<= 1e-10",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.2 rep 0: all fits converged",
+   "value": true,
+   "expect": "== True",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.2 rep 0: simulator excess <= 1.5 theta*lambda bound (max)",
+   "value": 0.000486,
+   "expect": "<= 0.005",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.2 rep 0: nested emb training objective <= R0's (+1e-10)",
+   "value": -2.69184e-07,
+   "expect": "<= 1e-10",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.2 rep 1: all fits converged",
+   "value": true,
+   "expect": "== True",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.2 rep 1: simulator excess <= 1.5 theta*lambda bound (max)",
+   "value": 0.000486,
+   "expect": "<= 0.005",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.2 rep 1: nested emb training objective <= R0's (+1e-10)",
+   "value": -2.750895e-06,
+   "expect": "<= 1e-10",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.2 rep 2: all fits converged",
+   "value": true,
+   "expect": "== True",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.2 rep 2: simulator excess <= 1.5 theta*lambda bound (max)",
+   "value": 0.000486,
+   "expect": "<= 0.005",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.2 rep 2: nested emb training objective <= R0's (+1e-10)",
+   "value": -5.5252e-08,
+   "expect": "<= 1e-10",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.2 rep 3: all fits converged",
+   "value": true,
+   "expect": "== True",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.2 rep 3: simulator excess <= 1.5 theta*lambda bound (max)",
+   "value": 0.000486,
+   "expect": "<= 0.005",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.2 rep 3: nested emb training objective <= R0's (+1e-10)",
+   "value": -3.271311e-06,
+   "expect": "<= 1e-10",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.2 rep 4: all fits converged",
+   "value": true,
+   "expect": "== True",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.2 rep 4: simulator excess <= 1.5 theta*lambda bound (max)",
+   "value": 0.000486,
+   "expect": "<= 0.005",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.2 rep 4: nested emb training objective <= R0's (+1e-10)",
+   "value": -1.6122851e-05,
+   "expect": "<= 1e-10",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.4 rep 0: all fits converged",
+   "value": true,
+   "expect": "== True",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.4 rep 0: simulator excess <= 1.5 theta*lambda bound (max)",
+   "value": 0.000486,
+   "expect": "<= 0.005",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.4 rep 0: nested emb training objective <= R0's (+1e-10)",
+   "value": -4.926415e-06,
+   "expect": "<= 1e-10",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.4 rep 1: all fits converged",
+   "value": true,
+   "expect": "== True",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.4 rep 1: simulator excess <= 1.5 theta*lambda bound (max)",
+   "value": 0.000486,
+   "expect": "<= 0.005",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.4 rep 1: nested emb training objective <= R0's (+1e-10)",
+   "value": -7.9181438e-05,
+   "expect": "<= 1e-10",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.4 rep 2: all fits converged",
+   "value": true,
+   "expect": "== True",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.4 rep 2: simulator excess <= 1.5 theta*lambda bound (max)",
+   "value": 0.000486,
+   "expect": "<= 0.005",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.4 rep 2: nested emb training objective <= R0's (+1e-10)",
+   "value": -3.8122115e-05,
+   "expect": "<= 1e-10",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.4 rep 3: all fits converged",
+   "value": true,
+   "expect": "== True",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.4 rep 3: simulator excess <= 1.5 theta*lambda bound (max)",
+   "value": 0.000486,
+   "expect": "<= 0.005",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.4 rep 3: nested emb training objective <= R0's (+1e-10)",
+   "value": -1.849471e-05,
+   "expect": "<= 1e-10",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.4 rep 4: all fits converged",
+   "value": true,
+   "expect": "== True",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.4 rep 4: simulator excess <= 1.5 theta*lambda bound (max)",
+   "value": 0.000486,
+   "expect": "<= 0.005",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "world s=0.4 rep 4: nested emb training objective <= R0's (+1e-10)",
+   "value": -8.4651e-08,
+   "expect": "<= 1e-10",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "NULL worlds: T2 false-positive rate (emb)",
+   "value": 0.1,
+   "expect": "<= 0.3",
+   "passed": true,
+   "control": false,
+   "detail": "20 worlds; expected 0.05; 0.3 = clearly miscalibrated"
+  },
+  {
+   "name": "NULL worlds: T2 false-positive rate (noise_emb)",
+   "value": 0.2,
+   "expect": "<= 0.3",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "NULL worlds: T2 false-positive rate (sae32k8)",
+   "value": 0.1,
+   "expect": "<= 0.3",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "PLANTED s=0.4: T2 power",
+   "value": 0.2,
+   "expect": ">= 0.8",
+   "passed": false,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "PLANTED s=0.4: R1 recovers truth better than R0 (corr gain)",
+   "value": -0.01432,
+   "expect": ">= 0.0",
+   "passed": false,
+   "control": false,
+   "detail": ""
+  }
+ ],
+ "info": {
+  "R0 latent sd (train)": 1.710011307293607,
+  "fit_cache_dir": "outputs/rate_0.001/s09c_groundtruth/fits_c60a673719b9",
+  "effects": [
+   0.0,
+   0.025,
+   0.05,
+   0.1,
+   0.2,
+   0.4
+  ],
+  "summary": {
+   "s=0.0 emb": {
+    "n_worlds": 20,
+    "T2_reject_rate": 0.1,
+    "T2_heldout_gain_mean": 1.0683113233990329e-06,
+    "corr_truth_arm_minus_R0": 0.0007863817035535792
+   },
+   "s=0.0 noise_emb": {
+    "n_worlds": 20,
+    "T2_reject_rate": 0.2,
+    "T2_heldout_gain_mean": 5.428142560556426e-06,
+    "corr_truth_arm_minus_R0": 0.003265152608933908
+   },
+   "s=0.0 sae32k8": {
+    "n_worlds": 20,
+    "T2_reject_rate": 0.1,
+    "T2_heldout_gain_mean": -1.355758888022872e-05,
+    "corr_truth_arm_minus_R0": -0.01094780466854951
+   },
+   "s=0.025 emb": {
+    "n_worlds": 5,
+    "T2_reject_rate": 0.0,
+    "T2_heldout_gain_mean": -8.523689880042896e-06,
+    "corr_truth_arm_minus_R0": 0.0016592966217519045
+   },
+   "s=0.05 emb": {
+    "n_worlds": 5,
+    "T2_reject_rate": 0.2,
+    "T2_heldout_gain_mean": -1.2807456519870348e-05,
+    "corr_truth_arm_minus_R0": -0.005970263307216239
+   },
+   "s=0.1 emb": {
+    "n_worlds": 5,
+    "T2_reject_rate": 0.0,
+    "T2_heldout_gain_mean": -3.5983998171067196e-06,
+    "corr_truth_arm_minus_R0": -0.019644523626498843
+   },
+   "s=0.2 emb": {
+    "n_worlds": 5,
+    "T2_reject_rate": 0.2,
+    "T2_heldout_gain_mean": 3.4645993314384798e-06,
+    "corr_truth_arm_minus_R0": 0.0029785641820395227
+   },
+   "s=0.4 emb": {
+    "n_worlds": 5,
+    "T2_reject_rate": 0.2,
+    "T2_heldout_gain_mean": -1.1569133085066378e-05,
+    "corr_truth_arm_minus_R0": -0.014316314650839889
+   }
+  },
+  "rows": [
+   {
+    "s": 0.0,
+    "rep": 0,
+    "arm": "emb",
+    "heldout_mean": 2.44452777217649e-07,
+    "heldout_se": 1.1284932458052787e-05,
+    "heldout_p": 0.9827176773219974,
+    "corr_truth": 0.9301701047160164,
+    "corr_truth_R0": 0.9352199717737171
+   },
+   {
+    "s": 0.0,
+    "rep": 0,
+    "arm": "sae32k8",
+    "heldout_mean": 9.591386150772768e-05,
+    "heldout_se": 2.4954417923143726e-05,
+    "heldout_p": 0.00012126116709629588,
+    "corr_truth": 0.851710270161608,
+    "corr_truth_R0": 0.9352199717737171
+   },
+   {
+    "s": 0.0,
+    "rep": 0,
+    "arm": "noise_emb",
+    "heldout_mean": 1.0182628281866843e-05,
+    "heldout_se": 5.928963948864945e-06,
+    "heldout_p": 0.08589916445947743,
+    "corr_truth": 0.93826518255591,
+    "corr_truth_R0": 0.9352199717737171
+   },
+   {
+    "s": 0.0,
+    "rep": 1,
+    "arm": "emb",
+    "heldout_mean": 1.4793659257672995e-07,
+    "heldout_se": 1.5109401982921006e-07,
+    "heldout_p": 0.3275291402407561,
+    "corr_truth": 0.9133738174546665,
+    "corr_truth_R0": 0.9134424870345546
+   },
+   {
+    "s": 0.0,
+    "rep": 1,
+    "arm": "sae32k8",
+    "heldout_mean": -6.036820102044042e-07,
+    "heldout_se": 1.1167689632288065e-06,
+    "heldout_p": 0.5888100430913265,
+    "corr_truth": 0.913920287574427,
+    "corr_truth_R0": 0.9134424870345546
+   },
+   {
+    "s": 0.0,
+    "rep": 1,
+    "arm": "noise_emb",
+    "heldout_mean": -8.005467600684452e-08,
+    "heldout_se": 6.284760863559317e-08,
+    "heldout_p": 0.2027377338943036,
+    "corr_truth": 0.9135187841250813,
+    "corr_truth_R0": 0.9134424870345546
+   },
+   {
+    "s": 0.0,
+    "rep": 2,
+    "arm": "emb",
+    "heldout_mean": -1.1178195317449757e-05,
+    "heldout_se": 2.8875765429859615e-05,
+    "heldout_p": 0.6986722684245401,
+    "corr_truth": 0.8910626658254857,
+    "corr_truth_R0": 0.8703543439671183
+   },
+   {
+    "s": 0.0,
+    "rep": 2,
+    "arm": "sae32k8",
+    "heldout_mean": 5.821186965899909e-09,
+    "heldout_se": 3.46055869376256e-09,
+    "heldout_p": 0.0925392997748984,
+    "corr_truth": 0.8703553228407559,
+    "corr_truth_R0": 0.8703543439671183
+   },
+   {
+    "s": 0.0,
+    "rep": 2,
+    "arm": "noise_emb",
+    "heldout_mean": -9.551258712553605e-10,
+    "heldout_se": 1.661441933127113e-08,
+    "heldout_p": 0.9541566503265171,
+    "corr_truth": 0.8703613080476574,
+    "corr_truth_R0": 0.8703543439671183
+   },
+   {
+    "s": 0.0,
+    "rep": 3,
+    "arm": "emb",
+    "heldout_mean": 4.406623744225485e-06,
+    "heldout_se": 6.324180075442277e-06,
+    "heldout_p": 0.48593439249913917,
+    "corr_truth": 0.8906484870504007,
+    "corr_truth_R0": 0.8925521058593918
+   },
+   {
+    "s": 0.0,
+    "rep": 3,
+    "arm": "sae32k8",
+    "heldout_mean": -4.77729552846453e-07,
+    "heldout_se": 1.744245819346982e-06,
+    "heldout_p": 0.7841700090822726,
+    "corr_truth": 0.8936899504998664,
+    "corr_truth_R0": 0.8925521058593918
+   },
+   {
+    "s": 0.0,
+    "rep": 3,
+    "arm": "noise_emb",
+    "heldout_mean": -1.202441058010044e-07,
+    "heldout_se": 6.50424804260335e-08,
+    "heldout_p": 0.06450098324485742,
+    "corr_truth": 0.8926419249975308,
+    "corr_truth_R0": 0.8925521058593918
+   },
+   {
+    "s": 0.0,
+    "rep": 4,
+    "arm": "emb",
+    "heldout_mean": 1.0257127322693845e-05,
+    "heldout_se": 9.48468507398953e-06,
+    "heldout_p": 0.2795009915361738,
+    "corr_truth": 0.8963759931924822,
+    "corr_truth_R0": 0.8968527265197025
+   },
+   {
+    "s": 0.0,
+    "rep": 4,
+    "arm": "sae32k8",
+    "heldout_mean": 9.115572449234836e-05,
+    "heldout_se": 2.501549873365486e-05,
+    "heldout_p": 0.000268464827104986,
+    "corr_truth": 0.8524339836127941,
+    "corr_truth_R0": 0.8968527265197025
+   },
+   {
+    "s": 0.0,
+    "rep": 4,
+    "arm": "noise_emb",
+    "heldout_mean": -2.068438140006522e-06,
+    "heldout_se": 5.132208557565389e-07,
+    "heldout_p": 5.57038050059755e-05,
+    "corr_truth": 0.8984370641354312,
+    "corr_truth_R0": 0.8968527265197025
+   },
+   {
+    "s": 0.0,
+    "rep": 5,
+    "arm": "emb",
+    "heldout_mean": -2.2723900410916687e-06,
+    "heldout_se": 1.6927321614288186e-05,
+    "heldout_p": 0.8932096955475979,
+    "corr_truth": 0.8186316447657623,
+    "corr_truth_R0": 0.800391386568284
+   },
+   {
+    "s": 0.0,
+    "rep": 5,
+    "arm": "sae32k8",
+    "heldout_mean": -1.76120395792124e-05,
+    "heldout_se": 1.9747868834850727e-05,
+    "heldout_p": 0.3724759772826354,
+    "corr_truth": 0.838078124793503,
+    "corr_truth_R0": 0.800391386568284
+   },
+   {
+    "s": 0.0,
+    "rep": 5,
+    "arm": "noise_emb",
+    "heldout_mean": -7.176413649469638e-06,
+    "heldout_se": 1.7096557062889896e-05,
+    "heldout_p": 0.6746623758832087,
+    "corr_truth": 0.8228363334650841,
+    "corr_truth_R0": 0.800391386568284
+   },
+   {
+    "s": 0.0,
+    "rep": 6,
+    "arm": "emb",
+    "heldout_mean": -2.7156935438227876e-08,
+    "heldout_se": 2.4182747365186954e-08,
+    "heldout_p": 0.2614425849961217,
+    "corr_truth": 0.9270562467389374,
+    "corr_truth_R0": 0.9270463308156588
+   },
+   {
+    "s": 0.0,
+    "rep": 6,
+    "arm": "sae32k8",
+    "heldout_mean": -4.591460040095258e-08,
+    "heldout_se": 1.853783335889036e-08,
+    "heldout_p": 0.013256426557646216,
+    "corr_truth": 0.9270571042101028,
+    "corr_truth_R0": 0.9270463308156588
+   },
+   {
+    "s": 0.0,
+    "rep": 6,
+    "arm": "noise_emb",
+    "heldout_mean": -8.686870779141248e-06,
+    "heldout_se": 3.659682669228973e-06,
+    "heldout_p": 0.017612390038297152,
+    "corr_truth": 0.9315726949491125,
+    "corr_truth_R0": 0.9270463308156588
+   },
+   {
+    "s": 0.0,
+    "rep": 7,
+    "arm": "emb",
+    "heldout_mean": -1.9920632558003135e-05,
+    "heldout_se": 2.8091450266574557e-05,
+    "heldout_p": 0.4782406615702782,
+    "corr_truth": 0.8700080362009773,
+    "corr_truth_R0": 0.852825233228687
+   },
+   {
+    "s": 0.0,
+    "rep": 7,
+    "arm": "sae32k8",
+    "heldout_mean": -3.4762541748881297e-07,
+    "heldout_se": 8.930199518430088e-06,
+    "heldout_p": 0.9689486309856826,
+    "corr_truth": 0.8587770413394903,
+    "corr_truth_R0": 0.852825233228687
+   },
+   {
+    "s": 0.0,
+    "rep": 7,
+    "arm": "noise_emb",
+    "heldout_mean": -1.1574848577005574e-05,
+    "heldout_se": 6.242621921325199e-06,
+    "heldout_p": 0.06371561494223708,
+    "corr_truth": 0.862654482912985,
+    "corr_truth_R0": 0.852825233228687
+   },
+   {
+    "s": 0.0,
+    "rep": 8,
+    "arm": "emb",
+    "heldout_mean": -1.015585259356257e-05,
+    "heldout_se": 1.3801518327885997e-05,
+    "heldout_p": 0.4618217535536162,
+    "corr_truth": 0.8658524372924075,
+    "corr_truth_R0": 0.9037455929566465
+   },
+   {
+    "s": 0.0,
+    "rep": 8,
+    "arm": "sae32k8",
+    "heldout_mean": 2.2777983901560945e-06,
+    "heldout_se": 1.4453144035453724e-05,
+    "heldout_p": 0.8747729364619141,
+    "corr_truth": 0.8594225536392213,
+    "corr_truth_R0": 0.9037455929566465
+   },
+   {
+    "s": 0.0,
+    "rep": 8,
+    "arm": "noise_emb",
+    "heldout_mean": -8.841001826181017e-06,
+    "heldout_se": 5.468582310065939e-06,
+    "heldout_p": 0.1059452336607239,
+    "corr_truth": 0.9039971688005063,
+    "corr_truth_R0": 0.9037455929566465
+   },
+   {
+    "s": 0.0,
+    "rep": 9,
+    "arm": "emb",
+    "heldout_mean": -2.1667871779987842e-08,
+    "heldout_se": 8.019033001582239e-08,
+    "heldout_p": 0.7870021274575251,
+    "corr_truth": 0.8808504110163848,
+    "corr_truth_R0": 0.880803966363319
+   },
+   {
+    "s": 0.0,
+    "rep": 9,
+    "arm": "sae32k8",
+    "heldout_mean": 1.0505244431021254e-08,
+    "heldout_se": 8.497923257853172e-09,
+    "heldout_p": 0.21637934606234765,
+    "corr_truth": 0.8808137310205538,
+    "corr_truth_R0": 0.880803966363319
+   },
+   {
+    "s": 0.0,
+    "rep": 9,
+    "arm": "noise_emb",
+    "heldout_mean": -1.667044651891621e-06,
+    "heldout_se": 9.58927047110235e-07,
+    "heldout_p": 0.08213193366358008,
+    "corr_truth": 0.8823208655034191,
+    "corr_truth_R0": 0.880803966363319
+   },
+   {
+    "s": 0.0,
+    "rep": 10,
+    "arm": "emb",
+    "heldout_mean": -5.421731305545424e-09,
+    "heldout_se": 2.4411109606195526e-07,
+    "heldout_p": 0.9822803627382152,
+    "corr_truth": 0.9271062891373548,
+    "corr_truth_R0": 0.9272453026522441
+   },
+   {
+    "s": 0.0,
+    "rep": 10,
+    "arm": "sae32k8",
+    "heldout_mean": 1.0658500389272172e-09,
+    "heldout_se": 1.6042853400237592e-08,
+    "heldout_p": 0.9470293682626125,
+    "corr_truth": 0.9272427709906994,
+    "corr_truth_R0": 0.9272453026522441
+   },
+   {
+    "s": 0.0,
+    "rep": 10,
+    "arm": "noise_emb",
+    "heldout_mean": 1.963626201902154e-06,
+    "heldout_se": 4.848499655304369e-06,
+    "heldout_p": 0.6854799606647812,
+    "corr_truth": 0.9226867022220561,
+    "corr_truth_R0": 0.9272453026522441
+   },
+   {
+    "s": 0.0,
+    "rep": 11,
+    "arm": "emb",
+    "heldout_mean": 3.84578789871846e-05,
+    "heldout_se": 3.116141490203279e-05,
+    "heldout_p": 0.21714679031793094,
+    "corr_truth": 0.843265128711258,
+    "corr_truth_R0": 0.8929932413330968
+   },
+   {
+    "s": 0.0,
+    "rep": 11,
+    "arm": "sae32k8",
+    "heldout_mean": 6.985252862170246e-05,
+    "heldout_se": 3.7636583699564855e-05,
+    "heldout_p": 0.06345723444507265,
+    "corr_truth": 0.8068745623141443,
+    "corr_truth_R0": 0.8929932413330968
+   },
+   {
+    "s": 0.0,
+    "rep": 11,
+    "arm": "noise_emb",
+    "heldout_mean": 2.8086964205823292e-08,
+    "heldout_se": 3.392912683320034e-08,
+    "heldout_p": 0.4077765459151045,
+    "corr_truth": 0.8930130705451351,
+    "corr_truth_R0": 0.8929932413330968
+   },
+   {
+    "s": 0.0,
+    "rep": 12,
+    "arm": "emb",
+    "heldout_mean": -3.7696006608374407e-07,
+    "heldout_se": 1.651504011308176e-07,
+    "heldout_p": 0.022458310831887898,
+    "corr_truth": 0.8318884319743305,
+    "corr_truth_R0": 0.8318240483372885
+   },
+   {
+    "s": 0.0,
+    "rep": 12,
+    "arm": "sae32k8",
+    "heldout_mean": -7.749670469597031e-05,
+    "heldout_se": 3.910889610691829e-05,
+    "heldout_p": 0.04752827714160499,
+    "corr_truth": 0.8625753518620375,
+    "corr_truth_R0": 0.8318240483372885
+   },
+   {
+    "s": 0.0,
+    "rep": 12,
+    "arm": "noise_emb",
+    "heldout_mean": -1.55127145162053e-05,
+    "heldout_se": 5.4246061502010375e-06,
+    "heldout_p": 0.004240497506002279,
+    "corr_truth": 0.8378984232597053,
+    "corr_truth_R0": 0.8318240483372885
+   },
+   {
+    "s": 0.0,
+    "rep": 13,
+    "arm": "emb",
+    "heldout_mean": 9.262781032713029e-08,
+    "heldout_se": 1.1361455350017623e-07,
+    "heldout_p": 0.41491136340416634,
+    "corr_truth": 0.9312572169070876,
+    "corr_truth_R0": 0.9310718507503128
+   },
+   {
+    "s": 0.0,
+    "rep": 13,
+    "arm": "sae32k8",
+    "heldout_mean": 2.1687964530793526e-09,
+    "heldout_se": 1.0053564391479936e-08,
+    "heldout_p": 0.8292027893758185,
+    "corr_truth": 0.9310760771967286,
+    "corr_truth_R0": 0.9310718507503128
+   },
+   {
+    "s": 0.0,
+    "rep": 13,
+    "arm": "noise_emb",
+    "heldout_mean": -9.658461486758464e-08,
+    "heldout_se": 4.521846118804246e-08,
+    "heldout_p": 0.03268305198271498,
+    "corr_truth": 0.9311082588813071,
+    "corr_truth_R0": 0.9310718507503128
+   },
+   {
+    "s": 0.0,
+    "rep": 14,
+    "arm": "emb",
+    "heldout_mean": -9.326414995620868e-08,
+    "heldout_se": 5.550995329123716e-07,
+    "heldout_p": 0.8665727512987689,
+    "corr_truth": 0.8607496426491027,
+    "corr_truth_R0": 0.8600587815968238
+   },
+   {
+    "s": 0.0,
+    "rep": 14,
+    "arm": "sae32k8",
+    "heldout_mean": 1.4769661767322432e-08,
+    "heldout_se": 1.234310825753457e-08,
+    "heldout_p": 0.23146570952859813,
+    "corr_truth": 0.8600584705781795,
+    "corr_truth_R0": 0.8600587815968238
+   },
+   {
+    "s": 0.0,
+    "rep": 14,
+    "arm": "noise_emb",
+    "heldout_mean": -2.6450109577227633e-07,
+    "heldout_se": 5.423773420013252e-07,
+    "heldout_p": 0.6257836863118962,
+    "corr_truth": 0.8612613583405535,
+    "corr_truth_R0": 0.8600587815968238
+   },
+   {
+    "s": 0.0,
+    "rep": 15,
+    "arm": "emb",
+    "heldout_mean": 2.7786171508909564e-07,
+    "heldout_se": 1.514493873715243e-07,
+    "heldout_p": 0.066552575958755,
+    "corr_truth": 0.9236057919067427,
+    "corr_truth_R0": 0.9233435727426949
+   },
+   {
+    "s": 0.0,
+    "rep": 15,
+    "arm": "sae32k8",
+    "heldout_mean": 3.348073684180825e-09,
+    "heldout_se": 7.998800894846946e-09,
+    "heldout_p": 0.6755289933462933,
+    "corr_truth": 0.9233401499845582,
+    "corr_truth_R0": 0.9233435727426949
+   },
+   {
+    "s": 0.0,
+    "rep": 15,
+    "arm": "noise_emb",
+    "heldout_mean": -1.8204264889750253e-06,
+    "heldout_se": 1.0482443075821004e-06,
+    "heldout_p": 0.08245014564097397,
+    "corr_truth": 0.9217227477644421,
+    "corr_truth_R0": 0.9233435727426949
+   },
+   {
+    "s": 0.0,
+    "rep": 16,
+    "arm": "emb",
+    "heldout_mean": -9.221221665740196e-07,
+    "heldout_se": 1.2980899510554404e-06,
+    "heldout_p": 0.4774756730531091,
+    "corr_truth": 0.8616055698834648,
+    "corr_truth_R0": 0.8600187436102764
+   },
+   {
+    "s": 0.0,
+    "rep": 16,
+    "arm": "sae32k8",
+    "heldout_mean": 1.328550462848191e-05,
+    "heldout_se": 1.4323755341956075e-05,
+    "heldout_p": 0.3536589648952546,
+    "corr_truth": 0.856532746356348,
+    "corr_truth_R0": 0.8600187436102764
+   },
+   {
+    "s": 0.0,
+    "rep": 16,
+    "arm": "noise_emb",
+    "heldout_mean": -1.105625883514158e-06,
+    "heldout_se": 8.901167270199589e-07,
+    "heldout_p": 0.21419473791089938,
+    "corr_truth": 0.8623664626519363,
+    "corr_truth_R0": 0.8600187436102764
+   },
+   {
+    "s": 0.0,
+    "rep": 17,
+    "arm": "emb",
+    "heldout_mean": 1.0760039233554227e-07,
+    "heldout_se": 2.1950707286432833e-07,
+    "heldout_p": 0.623998746316706,
+    "corr_truth": 0.8886104406400245,
+    "corr_truth_R0": 0.8885514224711473
+   },
+   {
+    "s": 0.0,
+    "rep": 17,
+    "arm": "sae32k8",
+    "heldout_mean": 9.483053378175376e-09,
+    "heldout_se": 2.733258650008218e-08,
+    "heldout_p": 0.7286285390224805,
+    "corr_truth": 0.8885469289710843,
+    "corr_truth_R0": 0.8885514224711473
+   },
+   {
+    "s": 0.0,
+    "rep": 17,
+    "arm": "noise_emb",
+    "heldout_mean": -1.7477603176685861e-06,
+    "heldout_se": 9.901559263977591e-07,
+    "heldout_p": 0.07754083585520605,
+    "corr_truth": 0.8883726024184349,
+    "corr_truth_R0": 0.8885514224711473
+   },
+   {
+    "s": 0.0,
+    "rep": 18,
+    "arm": "emb",
+    "heldout_mean": 9.122897436970935e-08,
+    "heldout_se": 1.6118322473241503e-05,
+    "heldout_p": 0.9954840336747096,
+    "corr_truth": 0.8743372235094463,
+    "corr_truth_R0": 0.8626999450753549
+   },
+   {
+    "s": 0.0,
+    "rep": 18,
+    "arm": "sae32k8",
+    "heldout_mean": 0.0001165021648330868,
+    "heldout_se": 2.8619969397117522e-05,
+    "heldout_p": 4.688012806694368e-05,
+    "corr_truth": 0.7979674461642595,
+    "corr_truth_R0": 0.8626999450753549
+   },
+   {
+    "s": 0.0,
+    "rep": 18,
+    "arm": "noise_emb",
+    "heldout_mean": -4.040369356532742e-05,
+    "heldout_se": 2.827322404072744e-05,
+    "heldout_p": 0.1529914614291854,
+    "corr_truth": 0.847450721086128,
+    "corr_truth_R0": 0.8626999450753549
+   },
+   {
+    "s": 0.0,
+    "rep": 19,
+    "arm": "emb",
+    "heldout_mean": -3.0475901352755582e-05,
+    "heldout_se": 1.487830223182314e-05,
+    "heldout_p": 0.04052617127091764,
+    "corr_truth": 0.9146094166116661,
+    "corr_truth_R0": 0.8742963084566082
+   },
+   {
+    "s": 0.0,
+    "rep": 19,
+    "arm": "sae32k8",
+    "heldout_mean": -2.129927087952423e-05,
+    "heldout_se": 1.8601316343627102e-05,
+    "heldout_p": 0.25219215129609207,
+    "corr_truth": 0.905908394631575,
+    "corr_truth_R0": 0.8742963084566082
+   },
+   {
+    "s": 0.0,
+    "rep": 19,
+    "arm": "noise_emb",
+    "heldout_mean": -1.9570014645398278e-05,
+    "heldout_se": 1.8426937335842095e-05,
+    "heldout_p": 0.28822072631335083,
+    "corr_truth": 0.9081542576291893,
+    "corr_truth_R0": 0.8742963084566082
+   },
+   {
+    "s": 0.025,
+    "rep": 0,
+    "arm": "emb",
+    "heldout_mean": -2.4844242993122292e-05,
+    "heldout_se": 1.9663716470716568e-05,
+    "heldout_p": 0.20642530527721303,
+    "corr_truth": 0.8744715339377456,
+    "corr_truth_R0": 0.8398064981970846
+   },
+   {
+    "s": 0.025,
+    "rep": 1,
+    "arm": "emb",
+    "heldout_mean": -3.698072866282799e-06,
+    "heldout_se": 7.888978151473538e-06,
+    "heldout_p": 0.6392379803913901,
+    "corr_truth": 0.88220469501409,
+    "corr_truth_R0": 0.8800468925252852
+   },
+   {
+    "s": 0.025,
+    "rep": 2,
+    "arm": "emb",
+    "heldout_mean": -1.7422818574752656e-07,
+    "heldout_se": 1.0352577771894735e-07,
+    "heldout_p": 0.09238574704163655,
+    "corr_truth": 0.8975404625350892,
+    "corr_truth_R0": 0.8975905246282088
+   },
+   {
+    "s": 0.025,
+    "rep": 3,
+    "arm": "emb",
+    "heldout_mean": -1.8369970192437888e-06,
+    "heldout_se": 2.82021709510677e-06,
+    "heldout_p": 0.5148094541658936,
+    "corr_truth": 0.9235070440300649,
+    "corr_truth_R0": 0.9246522292716937
+   },
+   {
+    "s": 0.025,
+    "rep": 4,
+    "arm": "emb",
+    "heldout_mean": 7.317199046461089e-05,
+    "heldout_se": 2.392106950361332e-05,
+    "heldout_p": 0.002221565304829122,
+    "corr_truth": 0.8682200182295868,
+    "corr_truth_R0": 0.8955511260155448
+   },
+   {
+    "s": 0.05,
+    "rep": 0,
+    "arm": "emb",
+    "heldout_mean": -1.0804855189025715e-06,
+    "heldout_se": 1.6463042401259667e-06,
+    "heldout_p": 0.5116248475719707,
+    "corr_truth": 0.920816869820463,
+    "corr_truth_R0": 0.9186457302134462
+   },
+   {
+    "s": 0.05,
+    "rep": 1,
+    "arm": "emb",
+    "heldout_mean": -2.0052081323439933e-07,
+    "heldout_se": 5.884150017921014e-08,
+    "heldout_p": 0.0006548582125441079,
+    "corr_truth": 0.7501314996278807,
+    "corr_truth_R0": 0.7500672714355024
+   },
+   {
+    "s": 0.05,
+    "rep": 2,
+    "arm": "emb",
+    "heldout_mean": -9.896753063307867e-07,
+    "heldout_se": 6.08322621696106e-07,
+    "heldout_p": 0.10376000255177638,
+    "corr_truth": 0.8228378880357636,
+    "corr_truth_R0": 0.8223152024245955
+   },
+   {
+    "s": 0.05,
+    "rep": 3,
+    "arm": "emb",
+    "heldout_mean": -3.223638656834928e-07,
+    "heldout_se": 4.4014367661476457e-07,
+    "heldout_p": 0.4639208031515796,
+    "corr_truth": 0.8849363990225381,
+    "corr_truth_R0": 0.8849723961409119
+   },
+   {
+    "s": 0.05,
+    "rep": 4,
+    "arm": "emb",
+    "heldout_mean": 6.663032810350299e-05,
+    "heldout_se": 2.1454917856253863e-05,
+    "heldout_p": 0.0018989533899280344,
+    "corr_truth": 0.8560689171011755,
+    "corr_truth_R0": 0.8886422899294459
+   },
+   {
+    "s": 0.1,
+    "rep": 0,
+    "arm": "emb",
+    "heldout_mean": 7.174803511924015e-06,
+    "heldout_se": 1.3960826132645446e-05,
+    "heldout_p": 0.6073051320186843,
+    "corr_truth": 0.8865179586935356,
+    "corr_truth_R0": 0.8958116300655529
+   },
+   {
+    "s": 0.1,
+    "rep": 1,
+    "arm": "emb",
+    "heldout_mean": 1.703804533850949e-07,
+    "heldout_se": 1.1205898677814791e-07,
+    "heldout_p": 0.12839709372400027,
+    "corr_truth": 0.8911834163064074,
+    "corr_truth_R0": 0.8913016356471799
+   },
+   {
+    "s": 0.1,
+    "rep": 2,
+    "arm": "emb",
+    "heldout_mean": -1.1350583815900895e-07,
+    "heldout_se": 9.682635910764939e-08,
+    "heldout_p": 0.24109197930321669,
+    "corr_truth": 0.87649677693686,
+    "corr_truth_R0": 0.8763130933778487
+   },
+   {
+    "s": 0.1,
+    "rep": 3,
+    "arm": "emb",
+    "heldout_mean": -1.9336501137923787e-05,
+    "heldout_se": 3.770349538137135e-05,
+    "heldout_p": 0.608051361514566,
+    "corr_truth": 0.7670320585984541,
+    "corr_truth_R0": 0.8057353075101038
+   },
+   {
+    "s": 0.1,
+    "rep": 4,
+    "arm": "emb",
+    "heldout_mean": 3.0096822096307283e-05,
+    "heldout_se": 1.99882993300037e-05,
+    "heldout_p": 0.13213855323331863,
+    "corr_truth": 0.870296142828082,
+    "corr_truth_R0": 0.9205873048951481
+   },
+   {
+    "s": 0.2,
+    "rep": 0,
+    "arm": "emb",
+    "heldout_mean": -8.037232601791208e-07,
+    "heldout_se": 3.694761075428261e-07,
+    "heldout_p": 0.02960726078713186,
+    "corr_truth": 0.9083790382441052,
+    "corr_truth_R0": 0.9080748069879508
+   },
+   {
+    "s": 0.2,
+    "rep": 1,
+    "arm": "emb",
+    "heldout_mean": -7.798336795986943e-06,
+    "heldout_se": 1.143941734262664e-05,
+    "heldout_p": 0.4954239131389374,
+    "corr_truth": 0.8687949036125762,
+    "corr_truth_R0": 0.8597946663997229
+   },
+   {
+    "s": 0.2,
+    "rep": 2,
+    "arm": "emb",
+    "heldout_mean": 6.333206840103692e-08,
+    "heldout_se": 1.5476284812366842e-07,
+    "heldout_p": 0.682378143979302,
+    "corr_truth": 0.798197054331416,
+    "corr_truth_R0": 0.7980474840217157
+   },
+   {
+    "s": 0.2,
+    "rep": 3,
+    "arm": "emb",
+    "heldout_mean": -6.8415051475425955e-06,
+    "heldout_se": 5.591337631202664e-06,
+    "heldout_p": 0.22110691122762716,
+    "corr_truth": 0.8883863036948981,
+    "corr_truth_R0": 0.8689810957445564
+   },
+   {
+    "s": 0.2,
+    "rep": 4,
+    "arm": "emb",
+    "heldout_mean": -1.942763521884775e-06,
+    "heldout_se": 1.077732058777096e-05,
+    "heldout_p": 0.8569452725461858,
+    "corr_truth": 0.9092886943340531,
+    "corr_truth_R0": 0.9232551201529051
+   },
+   {
+    "s": 0.4,
+    "rep": 0,
+    "arm": "emb",
+    "heldout_mean": -2.031624570599239e-05,
+    "heldout_se": 9.39571340884063e-06,
+    "heldout_p": 0.030595923840073976,
+    "corr_truth": 0.8269740967166269,
+    "corr_truth_R0": 0.8100144004934866
+   },
+   {
+    "s": 0.4,
+    "rep": 1,
+    "arm": "emb",
+    "heldout_mean": 9.74860205761229e-05,
+    "heldout_se": 2.8884271296221758e-05,
+    "heldout_p": 0.0007380078842770624,
+    "corr_truth": 0.7368498804446448,
+    "corr_truth_R0": 0.8574634016374802
+   },
+   {
+    "s": 0.4,
+    "rep": 2,
+    "arm": "emb",
+    "heldout_mean": 2.9944303548642284e-06,
+    "heldout_se": 1.326852986930526e-05,
+    "heldout_p": 0.8214509866556807,
+    "corr_truth": 0.8470632325148686,
+    "corr_truth_R0": 0.8340946132338328
+   },
+   {
+    "s": 0.4,
+    "rep": 3,
+    "arm": "emb",
+    "heldout_mean": -2.223569710226113e-05,
+    "heldout_se": 1.2366091938589493e-05,
+    "heldout_p": 0.07215825145060421,
+    "corr_truth": 0.900101464120256,
+    "corr_truth_R0": 0.8811802389552859
+   },
+   {
+    "s": 0.4,
+    "rep": 4,
+    "arm": "emb",
+    "heldout_mean": -8.284269740172058e-08,
+    "heldout_se": 1.552549026313519e-07,
+    "heldout_p": 0.5936241857844189,
+    "corr_truth": 0.8627515751540884,
+    "corr_truth_R0": 0.8625691678845987
+   }
+  ],
+  "paper_null_corr_truth": {
+   "repl": [
+    0.6438800700583722,
+    0.6489056965784917,
+    0.6502773798223216
+   ],
+   "emb": [
+    0.3235925992109716,
+    0.48853879593589983,
+    0.40888381307084104
+   ],
+   "noise_emb": [
+    0.4837980633480263,
+    0.5107785819162725,
+    0.4707416471386503
+   ]
+  },
+  "real_emb_heldout_gain": -2.253994531704004e-05,
+  "equivalent_planted_s": 0.0,
+  "sae_used": "sae32k8"
+ }
+}

@@ -1,0 +1,365 @@
+{
+ "block": "s02_sites",
+ "ok": true,
+ "checks": [
+  {
+   "name": "every_autosome_present",
+   "value": [],
+   "expect": "== []",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "max per-chromosome relative error of the sample rate",
+   "value": 0.0097,
+   "expect": "<= 0.1",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "overall sample fraction / rate",
+   "value": 1.0014,
+   "expect": "1.0 \u00b1 0.02",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "site type fraction [M]: sample - all sites",
+   "value": -0.0001,
+   "expect": "0.0 \u00b1 0.09951",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "site type fraction [L]: sample - all sites",
+   "value": 6e-05,
+   "expect": "0.0 \u00b1 0.002",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "site type fraction [H]: sample - all sites",
+   "value": 4e-05,
+   "expect": "0.0 \u00b1 0.002",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "positions unique",
+   "value": true,
+   "expect": "== True",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "evol values in range",
+   "value": true,
+   "expect": "== True",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "ins position is the 0-based hg19 index (offset with no CpG)",
+   "value": 0,
+   "expect": "== 0",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "CpG fraction at chosen offset",
+   "value": 0.0,
+   "expect": "<= 0.001",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "|C - G| at chosen offset (strand symmetry)",
+   "value": 0.0008,
+   "expect": "<= 0.01",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "CONTROL CpG fraction at offset -1",
+   "value": 0.0073,
+   "expect": ">= 0.002",
+   "passed": true,
+   "control": true,
+   "detail": ""
+  },
+  {
+   "name": "CONTROL CpG fraction at offset +1",
+   "value": 0.00792,
+   "expect": ">= 0.002",
+   "passed": true,
+   "control": true,
+   "detail": ""
+  },
+  {
+   "name": "N base fraction at sites",
+   "value": 0.0,
+   "expect": "<= 0.001",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "excluded fraction / genome fraction covered by benchmark windows",
+   "value": 1.058,
+   "expect": "1.0 \u00b1 0.5",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "brute-force min distance of kept sites to any benchmark variant",
+   "value": 1006.0,
+   "expect": ">= 1001",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "autosomes missing from [train]",
+   "value": [],
+   "expect": "== []",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "autosomes missing from [select]",
+   "value": [],
+   "expect": "== []",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "autosomes missing from [eval]",
+   "value": [],
+   "expect": "== []",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "blocks in both train and held-out",
+   "value": 0,
+   "expect": "== 0",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "held-out fraction",
+   "value": 0.5079,
+   "expect": "0.5 \u00b1 0.05",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "select share of held-out",
+   "value": 0.1017,
+   "expect": "0.1 \u00b1 0.05",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  }
+ ],
+ "info": {
+  "n_samples": 108,
+  "wattersons_a": 5.254710117967204,
+  "counts_all_sites": {
+   "chr1": 128825838,
+   "chr10": 75458853,
+   "chr11": 75382516,
+   "chr12": 75182597,
+   "chr13": 57757754,
+   "chr14": 50805535,
+   "chr15": 44902035,
+   "chr16": 41165274,
+   "chr17": 39436793,
+   "chr18": 46537745,
+   "chr19": 22383926,
+   "chr2": 142889641,
+   "chr20": 36070605,
+   "chr21": 19390879,
+   "chr22": 17434944,
+   "chr3": 118184123,
+   "chr4": 110507158,
+   "chr5": 105528105,
+   "chr6": 99814436,
+   "chr7": 82384869,
+   "chr8": 85994622,
+   "chr9": 64753556
+  },
+  "type_counts_all_sites": {
+   "chr1": {
+    "M": 128234621,
+    "L": 473799,
+    "H": 117418
+   },
+   "chr10": {
+    "M": 75088864,
+    "L": 294334,
+    "H": 75655
+   },
+   "chr11": {
+    "M": 75016030,
+    "L": 291520,
+    "H": 74966
+   },
+   "chr12": {
+    "M": 74828776,
+    "L": 283899,
+    "H": 69922
+   },
+   "chr13": {
+    "M": 57469465,
+    "L": 230360,
+    "H": 57929
+   },
+   "chr14": {
+    "M": 50559697,
+    "L": 197029,
+    "H": 48809
+   },
+   "chr15": {
+    "M": 44686443,
+    "L": 171391,
+    "H": 44201
+   },
+   "chr16": {
+    "M": 40934666,
+    "L": 184672,
+    "H": 45936
+   },
+   "chr17": {
+    "M": 39263126,
+    "L": 138929,
+    "H": 34738
+   },
+   "chr18": {
+    "M": 46306114,
+    "L": 185483,
+    "H": 46148
+   },
+   "chr19": {
+    "M": 22281468,
+    "L": 81797,
+    "H": 20661
+   },
+   "chr2": {
+    "M": 142208559,
+    "L": 547657,
+    "H": 133425
+   },
+   "chr20": {
+    "M": 35901469,
+    "L": 135026,
+    "H": 34110
+   },
+   "chr21": {
+    "M": 19291397,
+    "L": 77796,
+    "H": 21686
+   },
+   "chr22": {
+    "M": 17352087,
+    "L": 66437,
+    "H": 16420
+   },
+   "chr3": {
+    "M": 117610350,
+    "L": 459650,
+    "H": 114123
+   },
+   "chr4": {
+    "M": 109947658,
+    "L": 444522,
+    "H": 114978
+   },
+   "chr5": {
+    "M": 105009726,
+    "L": 415573,
+    "H": 102806
+   },
+   "chr6": {
+    "M": 99322377,
+    "L": 391763,
+    "H": 100296
+   },
+   "chr7": {
+    "M": 81972392,
+    "L": 329581,
+    "H": 82896
+   },
+   "chr8": {
+    "M": 85538712,
+    "L": 364604,
+    "H": 91306
+   },
+   "chr9": {
+    "M": 64421689,
+    "L": 265855,
+    "H": 66012
+   }
+  },
+  "n_sampled": 1542881,
+  "per_chrom_rel_error": {
+   "chr1": 4.006960156544004e-05,
+   "chr2": 0.002053045958734012,
+   "chr3": -0.0018540815334392446,
+   "chr4": 0.004541262385917122,
+   "chr5": -0.0017161778845551368,
+   "chr6": 0.0034821015268773348,
+   "chr7": -0.005351334600046442,
+   "chr8": 0.0009230577233074744,
+   "chr9": 0.005442851663621351,
+   "chr10": -3.7808684953066773e-05,
+   "chr11": 0.0064004762059148845,
+   "chr12": 0.005658264238996846,
+   "chr13": 0.0028783321456715694,
+   "chr14": -0.000679748771467481,
+   "chr15": 0.005923228201127229,
+   "chr16": 0.001839560207955726,
+   "chr17": -0.0023529550184264725,
+   "chr18": -0.002143313991685769,
+   "chr19": 0.0037113239205670556,
+   "chr20": 0.0019238657072704335,
+   "chr21": -0.008090350107388011,
+   "chr22": 0.009696389044897336
+  },
+  "cpg_by_offset": {
+   "-1": 0.0073,
+   "0": 0.0,
+   "1": 0.007925
+  },
+  "c_g_asymmetry_by_offset": {
+   "-1": 0.007174999999999987,
+   "0": 0.0007749999999999979,
+   "1": 0.012725000000000014
+  },
+  "ins_to_0based_offset": 0,
+  "excluded_frac": 0.11716328090111938,
+  "window_cover_frac": 0.11071666146657634,
+  "n_by_role": {
+   "train": 670261,
+   "select": 70332,
+   "eval": 621519
+  }
+ }
+}

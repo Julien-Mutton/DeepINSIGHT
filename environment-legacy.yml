@@ -1,0 +1,9 @@
+# Only for reading the HGMD benchmark pickles (Python 2 / pandas 0.13.1), called by step s01.
+#   conda env create -f environment-legacy.yml      -> env `legacy_pandas`
+# The pipeline finds it at <conda>/envs/legacy_pandas/bin/python, or set DEEPINSIGHT_PY_LEGACY.
+name: legacy_pandas
+channels: [defaults, free]
+dependencies:
+  - python=2.7
+  - numpy=1.8.2
+  - pandas=0.13.1

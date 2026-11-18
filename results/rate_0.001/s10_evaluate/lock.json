@@ -1,0 +1,75 @@
+{
+ "reads": [
+  {
+   "hash": "89b069b68c299e39",
+   "plan": {
+    "columns": {
+     "published": null,
+     "R0 repl": "repl",
+     "R1 emb": "emb",
+     "R2 sae64k16": "sae64k16",
+     "noise_emb": "noise_emb",
+     "noise64": "noise64",
+     "posctl": "posctl"
+    },
+    "deltas": [
+     [
+      "R1 - R0",
+      "R0 repl",
+      "R1 emb"
+     ],
+     [
+      "R2 - R0",
+      "R0 repl",
+      "R2 sae64k16"
+     ],
+     [
+      "R1 - noise_emb",
+      "noise_emb",
+      "R1 emb"
+     ],
+     [
+      "R2 - noise64",
+      "noise64",
+      "R2 sae64k16"
+     ],
+     [
+      "R2 - R1",
+      "R1 emb",
+      "R2 sae64k16"
+     ],
+     [
+      "posctl - R0",
+      "R0 repl",
+      "posctl"
+     ],
+     [
+      "R0 - published",
+      "published",
+      "R0 repl"
+     ]
+    ],
+    "seeds": [
+     0,
+     1,
+     2
+    ],
+    "epoch": "final",
+    "rows": "usable in every column",
+    "bootstrap": [
+     2000,
+     100000
+    ],
+    "sae_chosen_without_benchmark": {
+     "sae_chosen": "sae64k16",
+     "noise_for_chosen": "noise64",
+     "select_nll": {
+      "sae32k8": 0.07740029502051639,
+      "sae64k16": 0.07739885721429761,
+      "sae128k32": 0.0774150506291178
+     }
+    }
+   }
+  }
+ ]
+}

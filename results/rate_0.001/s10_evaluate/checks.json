@@ -1,0 +1,31 @@
+{
+ "block": "s10_evaluate",
+ "ok": true,
+ "checks": [
+  {
+   "name": "paired rows / all benchmark rows",
+   "value": 0.9849,
+   "expect": ">= 0.95",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "auroc implementation equals sklearn",
+   "value": 0.0,
+   "expect": "0.0 \u00b1 1e-09",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "benchmark reads for this plan",
+   "value": 1,
+   "expect": "== 1",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  }
+ ],
+ "info": {}
+}

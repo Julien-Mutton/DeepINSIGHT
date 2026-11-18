@@ -1,0 +1,130 @@
+{
+ "block": "s06b_composition",
+ "ok": true,
+ "checks": [
+  {
+   "name": "sites: shape",
+   "value": [
+    1362112,
+    4
+   ],
+   "expect": "== [1362112, 4]",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sites: finite",
+   "value": true,
+   "expect": "== True",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sites: values in range",
+   "value": true,
+   "expect": "== True",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sites: mean GC (genome ~0.41)",
+   "value": 0.404,
+   "expect": "0.41 \u00b1 0.04",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sites: mean CpG o/e (genome ~0.25)",
+   "value": 0.197,
+   "expect": "0.25 \u00b1 0.1",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sites: mean repeat fraction (hg19 ~0.5)",
+   "value": 0.384,
+   "expect": "0.45 \u00b1 0.15",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sites: random rows recomputed equal",
+   "value": 0,
+   "expect": "== 0",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sites: CONTROL window 5 kb away differs (frac rows)",
+   "value": 1.0,
+   "expect": ">= 0.9",
+   "passed": true,
+   "control": true,
+   "detail": ""
+  },
+  {
+   "name": "panel: shape",
+   "value": [
+    184181,
+    4
+   ],
+   "expect": "== [184181, 4]",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "panel: finite",
+   "value": true,
+   "expect": "== True",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "panel: values in range",
+   "value": true,
+   "expect": "== True",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "panel: random rows recomputed equal",
+   "value": 0,
+   "expect": "== 0",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "panel: CONTROL window 5 kb away differs (frac rows)",
+   "value": 1.0,
+   "expect": ">= 0.9",
+   "passed": true,
+   "control": true,
+   "detail": ""
+  }
+ ],
+ "info": {
+  "sites: mean gc/cpg_oe/repeat/homopolymer": [
+   0.40400001406669617,
+   0.19670000672340393,
+   0.38359999656677246,
+   0.00860000029206276
+  ],
+  "panel: mean gc/cpg_oe/repeat/homopolymer": [
+   0.4237000048160553,
+   0.23839999735355377,
+   0.4936000108718872,
+   0.009200000204145908
+  ]
+ }
+}

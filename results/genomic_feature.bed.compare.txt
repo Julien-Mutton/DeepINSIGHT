@@ -1,0 +1,3 @@
+file genomic_feature.bed expected_bytes 1994938140 got_bytes 1994938140
+gzip_integrity ok
+IDENTICAL to data/linsight/genomic_feature.bed

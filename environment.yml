@@ -1,0 +1,28 @@
+# Main environment (Python 3.10, CPU). Versions are the ones the 0.1% run used.
+#   conda env create -f environment.yml && conda activate deepinsight && pip install -e .
+name: deepinsight
+channels: [conda-forge, bioconda]
+dependencies:
+  - python=3.10
+  - numpy=2.2.6
+  - scipy=1.15.3
+  - pandas=2.3.3
+  - scikit-learn=1.7.2
+  - matplotlib=3.10.9
+  - pyfaidx=0.9.0.4
+  - pybigwig=0.3.25
+  - pytest
+  - threadpoolctl
+  - make
+  - gcc
+  - gxx
+  - tectonic            # LaTeX engine for the paper (optional)
+  - pip
+  - pip:
+      - --extra-index-url https://download.pytorch.org/whl/cpu
+      - torch==2.12.0
+      - torchvision==0.27.0
+      - transformers==4.57.6
+      - einops==0.8.2
+      - opt_einsum==3.4.0
+      - pyliftover==0.4.1

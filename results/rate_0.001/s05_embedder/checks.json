@@ -1,0 +1,91 @@
+{
+ "block": "s05_embedder",
+ "ok": true,
+ "checks": [
+  {
+   "name": "backbone_tensors_loaded",
+   "value": 227,
+   "expect": ">= 100",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "next_base_accuracy_on_hg38_windows",
+   "value": 0.4348,
+   "expect": ">= 0.35",
+   "passed": true,
+   "control": false,
+   "detail": "chance ~0.25-0.30"
+  },
+  {
+   "name": "CONTROL next_base_accuracy_on_random_sequence",
+   "value": 0.2531,
+   "expect": "<= 0.3",
+   "passed": true,
+   "control": true,
+   "detail": ""
+  },
+  {
+   "name": "deterministic (max |diff|)",
+   "value": 0.0,
+   "expect": "== 0.0",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "batch_invariance (max |diff|)",
+   "value": 0.0,
+   "expect": "<= 0.001",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "hidden_shape",
+   "value": [
+    4,
+    1001,
+    256
+   ],
+   "expect": "== [4, 1001, 256]",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "causal: states < CENTER unchanged by mutating CENTER",
+   "value": 8.344650268554688e-06,
+   "expect": "<= 0.0001",
+   "passed": true,
+   "control": false,
+   "detail": "FFT convolutions add ~1e-6 rounding"
+  },
+  {
+   "name": "state CENTER changed by mutating CENTER",
+   "value": 0.9275708198547363,
+   "expect": ">= 0.1",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "state CENTER unchanged by mutating CENTER+1",
+   "value": 6.556510925292969e-07,
+   "expect": "<= 0.0001",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "CONTROL state CENTER+1 changed by mutating CENTER+1",
+   "value": 1.1803035736083984,
+   "expect": ">= 0.1",
+   "passed": true,
+   "control": true,
+   "detail": ""
+  }
+ ],
+ "info": {}
+}

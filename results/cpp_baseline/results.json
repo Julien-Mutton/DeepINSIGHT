@@ -1,0 +1,26 @@
+{
+  "source": "LINSIGHT-fit (C++) on all INSIGHT sites, 20 epochs, final epoch; evaluated on the HGMD panel",
+  "tiers": {
+    "unmatched": {
+      "n": 161330,
+      "n_pos": 1564,
+      "auroc_cpp_refit": 0.8976765287935652,
+      "auroc_published_track": 0.8976764967774321,
+      "paper": 0.897
+    },
+    "matched_by_tss": {
+      "n": 16910,
+      "n_pos": 1564,
+      "auroc_cpp_refit": 0.7617438568761555,
+      "auroc_published_track": 0.7617440860318991,
+      "paper": 0.759
+    },
+    "matched_by_region": {
+      "n": 6286,
+      "n_pos": 1564,
+      "auroc_cpp_refit": 0.6645349731517379,
+      "auroc_published_track": 0.6645350408546381,
+      "paper": 0.66
+    }
+  }
+}

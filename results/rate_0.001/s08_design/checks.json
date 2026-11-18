@@ -1,0 +1,2383 @@
+{
+ "block": "s08_design",
+ "ok": true,
+ "checks": [
+  {
+   "name": "sites: re-lifted hg38 position == stored",
+   "value": 0,
+   "expect": "== 0",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "panel: re-lifted hg38 position == stored",
+   "value": 0,
+   "expect": "== 0",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "repl: train/benchmark share columns + standardisation",
+   "value": true,
+   "expect": "== True",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "repl: extra columns",
+   "value": 0,
+   "expect": "== 0",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "repl [sites]: rows equal to re-derivation from originals",
+   "value": 1.0,
+   "expect": ">= 1.0",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "repl [sites]: CONTROL swapped rows equal",
+   "value": 0.0433,
+   "expect": "<= 0.75",
+   "passed": true,
+   "control": true,
+   "detail": ""
+  },
+  {
+   "name": "repl [panel]: rows equal to re-derivation from originals",
+   "value": 1.0,
+   "expect": ">= 1.0",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "repl [panel]: CONTROL swapped rows equal",
+   "value": 0.0333,
+   "expect": "<= 0.75",
+   "passed": true,
+   "control": true,
+   "detail": ""
+  },
+  {
+   "name": "emb: train/benchmark share columns + standardisation",
+   "value": true,
+   "expect": "== True",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "emb: extra columns",
+   "value": 256,
+   "expect": "== 256",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "emb: standardised extra columns on train rows: max |mean|",
+   "value": 0.0,
+   "expect": "<= 1e-06",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "emb: standardised extra columns on train rows: max |sd - 1|",
+   "value": 0.0,
+   "expect": "<= 0.0001",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "emb [sites]: rows equal to re-derivation from originals",
+   "value": 1.0,
+   "expect": ">= 1.0",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "emb [sites]: CONTROL swapped rows equal",
+   "value": 0.0,
+   "expect": "<= 0.05",
+   "passed": true,
+   "control": true,
+   "detail": ""
+  },
+  {
+   "name": "emb [panel]: rows equal to re-derivation from originals",
+   "value": 1.0,
+   "expect": ">= 1.0",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "emb [panel]: CONTROL swapped rows equal",
+   "value": 0.0,
+   "expect": "<= 0.05",
+   "passed": true,
+   "control": true,
+   "detail": ""
+  },
+  {
+   "name": "sae32k8_s0: train/benchmark share columns + standardisation",
+   "value": true,
+   "expect": "== True",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae32k8_s0: extra columns",
+   "value": 32,
+   "expect": "== 32",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae32k8_s0: standardised extra columns on train rows: max |mean|",
+   "value": 0.0,
+   "expect": "<= 1e-06",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae32k8_s0: standardised extra columns on train rows: max |sd - 1|",
+   "value": 0.0,
+   "expect": "<= 0.0001",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae32k8_s0 [sites]: rows equal to re-derivation from originals",
+   "value": 1.0,
+   "expect": ">= 0.99",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae32k8_s0 [sites]: CONTROL swapped rows equal",
+   "value": 0.0,
+   "expect": "<= 0.05",
+   "passed": true,
+   "control": true,
+   "detail": ""
+  },
+  {
+   "name": "sae32k8_s0 [panel]: rows equal to re-derivation from originals",
+   "value": 1.0,
+   "expect": ">= 0.99",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae32k8_s0 [panel]: CONTROL swapped rows equal",
+   "value": 0.0,
+   "expect": "<= 0.05",
+   "passed": true,
+   "control": true,
+   "detail": ""
+  },
+  {
+   "name": "sae32k8_s1: train/benchmark share columns + standardisation",
+   "value": true,
+   "expect": "== True",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae32k8_s1: extra columns",
+   "value": 32,
+   "expect": "== 32",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae32k8_s1: standardised extra columns on train rows: max |mean|",
+   "value": 0.0,
+   "expect": "<= 1e-06",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae32k8_s1: standardised extra columns on train rows: max |sd - 1|",
+   "value": 0.0,
+   "expect": "<= 0.0001",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae32k8_s1 [sites]: rows equal to re-derivation from originals",
+   "value": 1.0,
+   "expect": ">= 0.99",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae32k8_s1 [sites]: CONTROL swapped rows equal",
+   "value": 0.0,
+   "expect": "<= 0.05",
+   "passed": true,
+   "control": true,
+   "detail": ""
+  },
+  {
+   "name": "sae32k8_s1 [panel]: rows equal to re-derivation from originals",
+   "value": 1.0,
+   "expect": ">= 0.99",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae32k8_s1 [panel]: CONTROL swapped rows equal",
+   "value": 0.0,
+   "expect": "<= 0.05",
+   "passed": true,
+   "control": true,
+   "detail": ""
+  },
+  {
+   "name": "sae32k8_s2: train/benchmark share columns + standardisation",
+   "value": true,
+   "expect": "== True",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae32k8_s2: extra columns",
+   "value": 32,
+   "expect": "== 32",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae32k8_s2: standardised extra columns on train rows: max |mean|",
+   "value": 0.0,
+   "expect": "<= 1e-06",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae32k8_s2: standardised extra columns on train rows: max |sd - 1|",
+   "value": 0.0,
+   "expect": "<= 0.0001",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae32k8_s2 [sites]: rows equal to re-derivation from originals",
+   "value": 1.0,
+   "expect": ">= 0.99",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae32k8_s2 [sites]: CONTROL swapped rows equal",
+   "value": 0.0,
+   "expect": "<= 0.05",
+   "passed": true,
+   "control": true,
+   "detail": ""
+  },
+  {
+   "name": "sae32k8_s2 [panel]: rows equal to re-derivation from originals",
+   "value": 1.0,
+   "expect": ">= 0.99",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae32k8_s2 [panel]: CONTROL swapped rows equal",
+   "value": 0.0,
+   "expect": "<= 0.05",
+   "passed": true,
+   "control": true,
+   "detail": ""
+  },
+  {
+   "name": "sae32k8_s3: train/benchmark share columns + standardisation",
+   "value": true,
+   "expect": "== True",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae32k8_s3: extra columns",
+   "value": 32,
+   "expect": "== 32",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae32k8_s3: standardised extra columns on train rows: max |mean|",
+   "value": 0.0,
+   "expect": "<= 1e-06",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae32k8_s3: standardised extra columns on train rows: max |sd - 1|",
+   "value": 0.0,
+   "expect": "<= 0.0001",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae32k8_s3 [sites]: rows equal to re-derivation from originals",
+   "value": 1.0,
+   "expect": ">= 0.99",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae32k8_s3 [sites]: CONTROL swapped rows equal",
+   "value": 0.0,
+   "expect": "<= 0.05",
+   "passed": true,
+   "control": true,
+   "detail": ""
+  },
+  {
+   "name": "sae32k8_s3 [panel]: rows equal to re-derivation from originals",
+   "value": 1.0,
+   "expect": ">= 0.99",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae32k8_s3 [panel]: CONTROL swapped rows equal",
+   "value": 0.0,
+   "expect": "<= 0.05",
+   "passed": true,
+   "control": true,
+   "detail": ""
+  },
+  {
+   "name": "sae32k8_s4: train/benchmark share columns + standardisation",
+   "value": true,
+   "expect": "== True",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae32k8_s4: extra columns",
+   "value": 32,
+   "expect": "== 32",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae32k8_s4: standardised extra columns on train rows: max |mean|",
+   "value": 0.0,
+   "expect": "<= 1e-06",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae32k8_s4: standardised extra columns on train rows: max |sd - 1|",
+   "value": 0.0,
+   "expect": "<= 0.0001",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae32k8_s4 [sites]: rows equal to re-derivation from originals",
+   "value": 1.0,
+   "expect": ">= 0.99",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae32k8_s4 [sites]: CONTROL swapped rows equal",
+   "value": 0.0,
+   "expect": "<= 0.05",
+   "passed": true,
+   "control": true,
+   "detail": ""
+  },
+  {
+   "name": "sae32k8_s4 [panel]: rows equal to re-derivation from originals",
+   "value": 1.0,
+   "expect": ">= 0.99",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae32k8_s4 [panel]: CONTROL swapped rows equal",
+   "value": 0.0,
+   "expect": "<= 0.05",
+   "passed": true,
+   "control": true,
+   "detail": ""
+  },
+  {
+   "name": "sae64k16_s0: train/benchmark share columns + standardisation",
+   "value": true,
+   "expect": "== True",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae64k16_s0: extra columns",
+   "value": 64,
+   "expect": "== 64",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae64k16_s0: standardised extra columns on train rows: max |mean|",
+   "value": 0.0,
+   "expect": "<= 1e-06",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae64k16_s0: standardised extra columns on train rows: max |sd - 1|",
+   "value": 0.0,
+   "expect": "<= 0.0001",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae64k16_s0 [sites]: rows equal to re-derivation from originals",
+   "value": 1.0,
+   "expect": ">= 0.99",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae64k16_s0 [sites]: CONTROL swapped rows equal",
+   "value": 0.0,
+   "expect": "<= 0.05",
+   "passed": true,
+   "control": true,
+   "detail": ""
+  },
+  {
+   "name": "sae64k16_s0 [panel]: rows equal to re-derivation from originals",
+   "value": 1.0,
+   "expect": ">= 0.99",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae64k16_s0 [panel]: CONTROL swapped rows equal",
+   "value": 0.0,
+   "expect": "<= 0.05",
+   "passed": true,
+   "control": true,
+   "detail": ""
+  },
+  {
+   "name": "sae64k16_s1: train/benchmark share columns + standardisation",
+   "value": true,
+   "expect": "== True",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae64k16_s1: extra columns",
+   "value": 64,
+   "expect": "== 64",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae64k16_s1: standardised extra columns on train rows: max |mean|",
+   "value": 0.0,
+   "expect": "<= 1e-06",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae64k16_s1: standardised extra columns on train rows: max |sd - 1|",
+   "value": 0.0,
+   "expect": "<= 0.0001",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae64k16_s1 [sites]: rows equal to re-derivation from originals",
+   "value": 1.0,
+   "expect": ">= 0.99",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae64k16_s1 [sites]: CONTROL swapped rows equal",
+   "value": 0.0,
+   "expect": "<= 0.05",
+   "passed": true,
+   "control": true,
+   "detail": ""
+  },
+  {
+   "name": "sae64k16_s1 [panel]: rows equal to re-derivation from originals",
+   "value": 1.0,
+   "expect": ">= 0.99",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae64k16_s1 [panel]: CONTROL swapped rows equal",
+   "value": 0.0,
+   "expect": "<= 0.05",
+   "passed": true,
+   "control": true,
+   "detail": ""
+  },
+  {
+   "name": "sae64k16_s2: train/benchmark share columns + standardisation",
+   "value": true,
+   "expect": "== True",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae64k16_s2: extra columns",
+   "value": 64,
+   "expect": "== 64",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae64k16_s2: standardised extra columns on train rows: max |mean|",
+   "value": 0.0,
+   "expect": "<= 1e-06",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae64k16_s2: standardised extra columns on train rows: max |sd - 1|",
+   "value": 0.0,
+   "expect": "<= 0.0001",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae64k16_s2 [sites]: rows equal to re-derivation from originals",
+   "value": 1.0,
+   "expect": ">= 0.99",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae64k16_s2 [sites]: CONTROL swapped rows equal",
+   "value": 0.0,
+   "expect": "<= 0.05",
+   "passed": true,
+   "control": true,
+   "detail": ""
+  },
+  {
+   "name": "sae64k16_s2 [panel]: rows equal to re-derivation from originals",
+   "value": 1.0,
+   "expect": ">= 0.99",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae64k16_s2 [panel]: CONTROL swapped rows equal",
+   "value": 0.0,
+   "expect": "<= 0.05",
+   "passed": true,
+   "control": true,
+   "detail": ""
+  },
+  {
+   "name": "sae64k16_s3: train/benchmark share columns + standardisation",
+   "value": true,
+   "expect": "== True",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae64k16_s3: extra columns",
+   "value": 64,
+   "expect": "== 64",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae64k16_s3: standardised extra columns on train rows: max |mean|",
+   "value": 0.0,
+   "expect": "<= 1e-06",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae64k16_s3: standardised extra columns on train rows: max |sd - 1|",
+   "value": 0.0,
+   "expect": "<= 0.0001",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae64k16_s3 [sites]: rows equal to re-derivation from originals",
+   "value": 1.0,
+   "expect": ">= 0.99",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae64k16_s3 [sites]: CONTROL swapped rows equal",
+   "value": 0.0,
+   "expect": "<= 0.05",
+   "passed": true,
+   "control": true,
+   "detail": ""
+  },
+  {
+   "name": "sae64k16_s3 [panel]: rows equal to re-derivation from originals",
+   "value": 1.0,
+   "expect": ">= 0.99",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae64k16_s3 [panel]: CONTROL swapped rows equal",
+   "value": 0.0,
+   "expect": "<= 0.05",
+   "passed": true,
+   "control": true,
+   "detail": ""
+  },
+  {
+   "name": "sae64k16_s4: train/benchmark share columns + standardisation",
+   "value": true,
+   "expect": "== True",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae64k16_s4: extra columns",
+   "value": 64,
+   "expect": "== 64",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae64k16_s4: standardised extra columns on train rows: max |mean|",
+   "value": 0.0,
+   "expect": "<= 1e-06",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae64k16_s4: standardised extra columns on train rows: max |sd - 1|",
+   "value": 0.0,
+   "expect": "<= 0.0001",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae64k16_s4 [sites]: rows equal to re-derivation from originals",
+   "value": 1.0,
+   "expect": ">= 0.99",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae64k16_s4 [sites]: CONTROL swapped rows equal",
+   "value": 0.0,
+   "expect": "<= 0.05",
+   "passed": true,
+   "control": true,
+   "detail": ""
+  },
+  {
+   "name": "sae64k16_s4 [panel]: rows equal to re-derivation from originals",
+   "value": 1.0,
+   "expect": ">= 0.99",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae64k16_s4 [panel]: CONTROL swapped rows equal",
+   "value": 0.0,
+   "expect": "<= 0.05",
+   "passed": true,
+   "control": true,
+   "detail": ""
+  },
+  {
+   "name": "sae128k32_s0: train/benchmark share columns + standardisation",
+   "value": true,
+   "expect": "== True",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae128k32_s0: extra columns",
+   "value": 128,
+   "expect": "== 128",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae128k32_s0: standardised extra columns on train rows: max |mean|",
+   "value": 0.0,
+   "expect": "<= 1e-06",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae128k32_s0: standardised extra columns on train rows: max |sd - 1|",
+   "value": 0.0,
+   "expect": "<= 0.0001",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae128k32_s0 [sites]: rows equal to re-derivation from originals",
+   "value": 1.0,
+   "expect": ">= 0.99",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae128k32_s0 [sites]: CONTROL swapped rows equal",
+   "value": 0.0,
+   "expect": "<= 0.05",
+   "passed": true,
+   "control": true,
+   "detail": ""
+  },
+  {
+   "name": "sae128k32_s0 [panel]: rows equal to re-derivation from originals",
+   "value": 1.0,
+   "expect": ">= 0.99",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae128k32_s0 [panel]: CONTROL swapped rows equal",
+   "value": 0.0,
+   "expect": "<= 0.05",
+   "passed": true,
+   "control": true,
+   "detail": ""
+  },
+  {
+   "name": "sae128k32_s1: train/benchmark share columns + standardisation",
+   "value": true,
+   "expect": "== True",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae128k32_s1: extra columns",
+   "value": 128,
+   "expect": "== 128",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae128k32_s1: standardised extra columns on train rows: max |mean|",
+   "value": 0.0,
+   "expect": "<= 1e-06",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae128k32_s1: standardised extra columns on train rows: max |sd - 1|",
+   "value": 0.0,
+   "expect": "<= 0.0001",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae128k32_s1 [sites]: rows equal to re-derivation from originals",
+   "value": 1.0,
+   "expect": ">= 0.99",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae128k32_s1 [sites]: CONTROL swapped rows equal",
+   "value": 0.0,
+   "expect": "<= 0.05",
+   "passed": true,
+   "control": true,
+   "detail": ""
+  },
+  {
+   "name": "sae128k32_s1 [panel]: rows equal to re-derivation from originals",
+   "value": 1.0,
+   "expect": ">= 0.99",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae128k32_s1 [panel]: CONTROL swapped rows equal",
+   "value": 0.0,
+   "expect": "<= 0.05",
+   "passed": true,
+   "control": true,
+   "detail": ""
+  },
+  {
+   "name": "sae128k32_s2: train/benchmark share columns + standardisation",
+   "value": true,
+   "expect": "== True",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae128k32_s2: extra columns",
+   "value": 128,
+   "expect": "== 128",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae128k32_s2: standardised extra columns on train rows: max |mean|",
+   "value": 0.0,
+   "expect": "<= 1e-06",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae128k32_s2: standardised extra columns on train rows: max |sd - 1|",
+   "value": 0.0,
+   "expect": "<= 0.0001",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae128k32_s2 [sites]: rows equal to re-derivation from originals",
+   "value": 1.0,
+   "expect": ">= 0.99",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae128k32_s2 [sites]: CONTROL swapped rows equal",
+   "value": 0.0,
+   "expect": "<= 0.05",
+   "passed": true,
+   "control": true,
+   "detail": ""
+  },
+  {
+   "name": "sae128k32_s2 [panel]: rows equal to re-derivation from originals",
+   "value": 1.0,
+   "expect": ">= 0.99",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae128k32_s2 [panel]: CONTROL swapped rows equal",
+   "value": 0.0,
+   "expect": "<= 0.05",
+   "passed": true,
+   "control": true,
+   "detail": ""
+  },
+  {
+   "name": "sae128k32_s3: train/benchmark share columns + standardisation",
+   "value": true,
+   "expect": "== True",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae128k32_s3: extra columns",
+   "value": 128,
+   "expect": "== 128",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae128k32_s3: standardised extra columns on train rows: max |mean|",
+   "value": 0.0,
+   "expect": "<= 1e-06",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae128k32_s3: standardised extra columns on train rows: max |sd - 1|",
+   "value": 0.0,
+   "expect": "<= 0.0001",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae128k32_s3 [sites]: rows equal to re-derivation from originals",
+   "value": 1.0,
+   "expect": ">= 0.99",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae128k32_s3 [sites]: CONTROL swapped rows equal",
+   "value": 0.0,
+   "expect": "<= 0.05",
+   "passed": true,
+   "control": true,
+   "detail": ""
+  },
+  {
+   "name": "sae128k32_s3 [panel]: rows equal to re-derivation from originals",
+   "value": 1.0,
+   "expect": ">= 0.99",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae128k32_s3 [panel]: CONTROL swapped rows equal",
+   "value": 0.0,
+   "expect": "<= 0.05",
+   "passed": true,
+   "control": true,
+   "detail": ""
+  },
+  {
+   "name": "sae128k32_s4: train/benchmark share columns + standardisation",
+   "value": true,
+   "expect": "== True",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae128k32_s4: extra columns",
+   "value": 128,
+   "expect": "== 128",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae128k32_s4: standardised extra columns on train rows: max |mean|",
+   "value": 0.0,
+   "expect": "<= 1e-06",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae128k32_s4: standardised extra columns on train rows: max |sd - 1|",
+   "value": 0.0,
+   "expect": "<= 0.0001",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae128k32_s4 [sites]: rows equal to re-derivation from originals",
+   "value": 1.0,
+   "expect": ">= 0.99",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae128k32_s4 [sites]: CONTROL swapped rows equal",
+   "value": 0.0,
+   "expect": "<= 0.05",
+   "passed": true,
+   "control": true,
+   "detail": ""
+  },
+  {
+   "name": "sae128k32_s4 [panel]: rows equal to re-derivation from originals",
+   "value": 1.0,
+   "expect": ">= 0.99",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sae128k32_s4 [panel]: CONTROL swapped rows equal",
+   "value": 0.0,
+   "expect": "<= 0.05",
+   "passed": true,
+   "control": true,
+   "detail": ""
+  },
+  {
+   "name": "noise_emb: train/benchmark share columns + standardisation",
+   "value": true,
+   "expect": "== True",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "noise_emb: extra columns",
+   "value": 256,
+   "expect": "== 256",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "noise_emb: standardised extra columns on train rows: max |mean|",
+   "value": 0.0,
+   "expect": "<= 1e-06",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "noise_emb: standardised extra columns on train rows: max |sd - 1|",
+   "value": 0.0,
+   "expect": "<= 0.0001",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "noise_emb [sites]: rows equal to re-derivation from originals",
+   "value": 1.0,
+   "expect": ">= 1.0",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "noise_emb [sites]: CONTROL swapped rows equal",
+   "value": 0.0,
+   "expect": "<= 0.05",
+   "passed": true,
+   "control": true,
+   "detail": ""
+  },
+  {
+   "name": "noise_emb [panel]: rows equal to re-derivation from originals",
+   "value": 1.0,
+   "expect": ">= 1.0",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "noise_emb [panel]: CONTROL swapped rows equal",
+   "value": 0.0,
+   "expect": "<= 0.05",
+   "passed": true,
+   "control": true,
+   "detail": ""
+  },
+  {
+   "name": "noise32: train/benchmark share columns + standardisation",
+   "value": true,
+   "expect": "== True",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "noise32: extra columns",
+   "value": 32,
+   "expect": "== 32",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "noise32: standardised extra columns on train rows: max |mean|",
+   "value": 0.0,
+   "expect": "<= 1e-06",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "noise32: standardised extra columns on train rows: max |sd - 1|",
+   "value": 0.0,
+   "expect": "<= 0.0001",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "noise32 [sites]: rows equal to re-derivation from originals",
+   "value": 1.0,
+   "expect": ">= 1.0",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "noise32 [sites]: CONTROL swapped rows equal",
+   "value": 0.0,
+   "expect": "<= 0.05",
+   "passed": true,
+   "control": true,
+   "detail": ""
+  },
+  {
+   "name": "noise32 [panel]: rows equal to re-derivation from originals",
+   "value": 1.0,
+   "expect": ">= 1.0",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "noise32 [panel]: CONTROL swapped rows equal",
+   "value": 0.0,
+   "expect": "<= 0.05",
+   "passed": true,
+   "control": true,
+   "detail": ""
+  },
+  {
+   "name": "noise64: train/benchmark share columns + standardisation",
+   "value": true,
+   "expect": "== True",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "noise64: extra columns",
+   "value": 64,
+   "expect": "== 64",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "noise64: standardised extra columns on train rows: max |mean|",
+   "value": 0.0,
+   "expect": "<= 1e-06",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "noise64: standardised extra columns on train rows: max |sd - 1|",
+   "value": 0.0,
+   "expect": "<= 0.0001",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "noise64 [sites]: rows equal to re-derivation from originals",
+   "value": 1.0,
+   "expect": ">= 1.0",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "noise64 [sites]: CONTROL swapped rows equal",
+   "value": 0.0,
+   "expect": "<= 0.05",
+   "passed": true,
+   "control": true,
+   "detail": ""
+  },
+  {
+   "name": "noise64 [panel]: rows equal to re-derivation from originals",
+   "value": 1.0,
+   "expect": ">= 1.0",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "noise64 [panel]: CONTROL swapped rows equal",
+   "value": 0.0,
+   "expect": "<= 0.05",
+   "passed": true,
+   "control": true,
+   "detail": ""
+  },
+  {
+   "name": "noise128: train/benchmark share columns + standardisation",
+   "value": true,
+   "expect": "== True",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "noise128: extra columns",
+   "value": 128,
+   "expect": "== 128",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "noise128: standardised extra columns on train rows: max |mean|",
+   "value": 0.0,
+   "expect": "<= 1e-06",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "noise128: standardised extra columns on train rows: max |sd - 1|",
+   "value": 0.0,
+   "expect": "<= 0.0001",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "noise128 [sites]: rows equal to re-derivation from originals",
+   "value": 1.0,
+   "expect": ">= 1.0",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "noise128 [sites]: CONTROL swapped rows equal",
+   "value": 0.0,
+   "expect": "<= 0.05",
+   "passed": true,
+   "control": true,
+   "detail": ""
+  },
+  {
+   "name": "noise128 [panel]: rows equal to re-derivation from originals",
+   "value": 1.0,
+   "expect": ">= 1.0",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "noise128 [panel]: CONTROL swapped rows equal",
+   "value": 0.0,
+   "expect": "<= 0.05",
+   "passed": true,
+   "control": true,
+   "detail": ""
+  },
+  {
+   "name": "shuf_emb: train/benchmark share columns + standardisation",
+   "value": true,
+   "expect": "== True",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "shuf_emb: extra columns",
+   "value": 256,
+   "expect": "== 256",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "shuf_emb: standardised extra columns on train rows: max |mean|",
+   "value": 0.0,
+   "expect": "<= 1e-06",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "shuf_emb: standardised extra columns on train rows: max |sd - 1|",
+   "value": 0.0,
+   "expect": "<= 0.0001",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "shuf_emb [sites]: rows equal to re-derivation from originals",
+   "value": 1.0,
+   "expect": ">= 0.99",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "shuf_emb [sites]: CONTROL swapped rows equal",
+   "value": 0.0,
+   "expect": "<= 0.05",
+   "passed": true,
+   "control": true,
+   "detail": ""
+  },
+  {
+   "name": "shuf_emb [panel]: rows equal to re-derivation from originals",
+   "value": 1.0,
+   "expect": ">= 0.99",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "shuf_emb [panel]: CONTROL swapped rows equal",
+   "value": 0.0,
+   "expect": "<= 0.05",
+   "passed": true,
+   "control": true,
+   "detail": ""
+  },
+  {
+   "name": "shuf_sae32k8: train/benchmark share columns + standardisation",
+   "value": true,
+   "expect": "== True",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "shuf_sae32k8: extra columns",
+   "value": 32,
+   "expect": "== 32",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "shuf_sae32k8: standardised extra columns on train rows: max |mean|",
+   "value": 0.0,
+   "expect": "<= 1e-06",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "shuf_sae32k8: standardised extra columns on train rows: max |sd - 1|",
+   "value": 0.0,
+   "expect": "<= 0.0001",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "shuf_sae32k8 [sites]: rows equal to re-derivation from originals",
+   "value": 1.0,
+   "expect": ">= 0.99",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "shuf_sae32k8 [sites]: CONTROL swapped rows equal",
+   "value": 0.0,
+   "expect": "<= 0.05",
+   "passed": true,
+   "control": true,
+   "detail": ""
+  },
+  {
+   "name": "shuf_sae32k8 [panel]: rows equal to re-derivation from originals",
+   "value": 1.0,
+   "expect": ">= 0.99",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "shuf_sae32k8 [panel]: CONTROL swapped rows equal",
+   "value": 0.0,
+   "expect": "<= 0.05",
+   "passed": true,
+   "control": true,
+   "detail": ""
+  },
+  {
+   "name": "shuf_sae64k16: train/benchmark share columns + standardisation",
+   "value": true,
+   "expect": "== True",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "shuf_sae64k16: extra columns",
+   "value": 64,
+   "expect": "== 64",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "shuf_sae64k16: standardised extra columns on train rows: max |mean|",
+   "value": 0.0,
+   "expect": "<= 1e-06",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "shuf_sae64k16: standardised extra columns on train rows: max |sd - 1|",
+   "value": 0.0,
+   "expect": "<= 0.0001",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "shuf_sae64k16 [sites]: rows equal to re-derivation from originals",
+   "value": 1.0,
+   "expect": ">= 0.99",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "shuf_sae64k16 [sites]: CONTROL swapped rows equal",
+   "value": 0.0,
+   "expect": "<= 0.05",
+   "passed": true,
+   "control": true,
+   "detail": ""
+  },
+  {
+   "name": "shuf_sae64k16 [panel]: rows equal to re-derivation from originals",
+   "value": 1.0,
+   "expect": ">= 0.99",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "shuf_sae64k16 [panel]: CONTROL swapped rows equal",
+   "value": 0.0,
+   "expect": "<= 0.05",
+   "passed": true,
+   "control": true,
+   "detail": ""
+  },
+  {
+   "name": "shuf_sae128k32: train/benchmark share columns + standardisation",
+   "value": true,
+   "expect": "== True",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "shuf_sae128k32: extra columns",
+   "value": 128,
+   "expect": "== 128",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "shuf_sae128k32: standardised extra columns on train rows: max |mean|",
+   "value": 0.0,
+   "expect": "<= 1e-06",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "shuf_sae128k32: standardised extra columns on train rows: max |sd - 1|",
+   "value": 0.0,
+   "expect": "<= 0.0001",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "shuf_sae128k32 [sites]: rows equal to re-derivation from originals",
+   "value": 1.0,
+   "expect": ">= 0.99",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "shuf_sae128k32 [sites]: CONTROL swapped rows equal",
+   "value": 0.0,
+   "expect": "<= 0.05",
+   "passed": true,
+   "control": true,
+   "detail": ""
+  },
+  {
+   "name": "shuf_sae128k32 [panel]: rows equal to re-derivation from originals",
+   "value": 1.0,
+   "expect": ">= 0.99",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "shuf_sae128k32 [panel]: CONTROL swapped rows equal",
+   "value": 0.0,
+   "expect": "<= 0.05",
+   "passed": true,
+   "control": true,
+   "detail": ""
+  },
+  {
+   "name": "comp: train/benchmark share columns + standardisation",
+   "value": true,
+   "expect": "== True",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "comp: extra columns",
+   "value": 4,
+   "expect": "== 4",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "comp: standardised extra columns on train rows: max |mean|",
+   "value": 0.0,
+   "expect": "<= 1e-06",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "comp: standardised extra columns on train rows: max |sd - 1|",
+   "value": 0.0,
+   "expect": "<= 0.0001",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "comp [sites]: rows equal to re-derivation from originals",
+   "value": 1.0,
+   "expect": ">= 1.0",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "comp [sites]: CONTROL swapped rows equal",
+   "value": 0.0,
+   "expect": "<= 0.05",
+   "passed": true,
+   "control": true,
+   "detail": ""
+  },
+  {
+   "name": "comp [panel]: rows equal to re-derivation from originals",
+   "value": 1.0,
+   "expect": ">= 1.0",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "comp [panel]: CONTROL swapped rows equal",
+   "value": 0.0,
+   "expect": "<= 0.05",
+   "passed": true,
+   "control": true,
+   "detail": ""
+  },
+  {
+   "name": "fsae_codes_s0: train/benchmark share columns + standardisation",
+   "value": true,
+   "expect": "== True",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "fsae_codes_s0: extra columns",
+   "value": 32,
+   "expect": "== 32",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "fsae_codes_s0: standardised extra columns on train rows: max |mean|",
+   "value": 0.0,
+   "expect": "<= 1e-06",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "fsae_codes_s0: standardised extra columns on train rows: max |sd - 1|",
+   "value": 0.0,
+   "expect": "<= 0.0001",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "fsae_codes_s0 [sites]: rows equal to re-derivation from originals",
+   "value": 1.0,
+   "expect": ">= 1.0",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "fsae_codes_s0 [sites]: CONTROL swapped rows equal",
+   "value": 0.0433,
+   "expect": "<= 0.05",
+   "passed": true,
+   "control": true,
+   "detail": ""
+  },
+  {
+   "name": "fsae_codes_s0 [panel]: rows equal to re-derivation from originals",
+   "value": 1.0,
+   "expect": ">= 1.0",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "fsae_codes_s0 [panel]: CONTROL swapped rows equal",
+   "value": 0.0333,
+   "expect": "<= 0.05",
+   "passed": true,
+   "control": true,
+   "detail": ""
+  },
+  {
+   "name": "fsae_codes_s1: train/benchmark share columns + standardisation",
+   "value": true,
+   "expect": "== True",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "fsae_codes_s1: extra columns",
+   "value": 32,
+   "expect": "== 32",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "fsae_codes_s1: standardised extra columns on train rows: max |mean|",
+   "value": 0.0,
+   "expect": "<= 1e-06",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "fsae_codes_s1: standardised extra columns on train rows: max |sd - 1|",
+   "value": 0.0,
+   "expect": "<= 0.0001",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "fsae_codes_s1 [sites]: rows equal to re-derivation from originals",
+   "value": 1.0,
+   "expect": ">= 1.0",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "fsae_codes_s1 [sites]: CONTROL swapped rows equal",
+   "value": 0.0433,
+   "expect": "<= 0.05",
+   "passed": true,
+   "control": true,
+   "detail": ""
+  },
+  {
+   "name": "fsae_codes_s1 [panel]: rows equal to re-derivation from originals",
+   "value": 1.0,
+   "expect": ">= 1.0",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "fsae_codes_s1 [panel]: CONTROL swapped rows equal",
+   "value": 0.0333,
+   "expect": "<= 0.05",
+   "passed": true,
+   "control": true,
+   "detail": ""
+  },
+  {
+   "name": "fsae_codes_s2: train/benchmark share columns + standardisation",
+   "value": true,
+   "expect": "== True",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "fsae_codes_s2: extra columns",
+   "value": 32,
+   "expect": "== 32",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "fsae_codes_s2: standardised extra columns on train rows: max |mean|",
+   "value": 0.0,
+   "expect": "<= 1e-06",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "fsae_codes_s2: standardised extra columns on train rows: max |sd - 1|",
+   "value": 0.0,
+   "expect": "<= 0.0001",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "fsae_codes_s2 [sites]: rows equal to re-derivation from originals",
+   "value": 1.0,
+   "expect": ">= 1.0",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "fsae_codes_s2 [sites]: CONTROL swapped rows equal",
+   "value": 0.0433,
+   "expect": "<= 0.05",
+   "passed": true,
+   "control": true,
+   "detail": ""
+  },
+  {
+   "name": "fsae_codes_s2 [panel]: rows equal to re-derivation from originals",
+   "value": 1.0,
+   "expect": ">= 1.0",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "fsae_codes_s2 [panel]: CONTROL swapped rows equal",
+   "value": 0.0333,
+   "expect": "<= 0.05",
+   "passed": true,
+   "control": true,
+   "detail": ""
+  },
+  {
+   "name": "fsae_codes_s3: train/benchmark share columns + standardisation",
+   "value": true,
+   "expect": "== True",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "fsae_codes_s3: extra columns",
+   "value": 32,
+   "expect": "== 32",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "fsae_codes_s3: standardised extra columns on train rows: max |mean|",
+   "value": 0.0,
+   "expect": "<= 1e-06",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "fsae_codes_s3: standardised extra columns on train rows: max |sd - 1|",
+   "value": 0.0,
+   "expect": "<= 0.0001",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "fsae_codes_s3 [sites]: rows equal to re-derivation from originals",
+   "value": 1.0,
+   "expect": ">= 1.0",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "fsae_codes_s3 [sites]: CONTROL swapped rows equal",
+   "value": 0.0433,
+   "expect": "<= 0.05",
+   "passed": true,
+   "control": true,
+   "detail": ""
+  },
+  {
+   "name": "fsae_codes_s3 [panel]: rows equal to re-derivation from originals",
+   "value": 1.0,
+   "expect": ">= 1.0",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "fsae_codes_s3 [panel]: CONTROL swapped rows equal",
+   "value": 0.0333,
+   "expect": "<= 0.05",
+   "passed": true,
+   "control": true,
+   "detail": ""
+  },
+  {
+   "name": "fsae_codes_s4: train/benchmark share columns + standardisation",
+   "value": true,
+   "expect": "== True",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "fsae_codes_s4: extra columns",
+   "value": 32,
+   "expect": "== 32",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "fsae_codes_s4: standardised extra columns on train rows: max |mean|",
+   "value": 0.0,
+   "expect": "<= 1e-06",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "fsae_codes_s4: standardised extra columns on train rows: max |sd - 1|",
+   "value": 0.0,
+   "expect": "<= 0.0001",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "fsae_codes_s4 [sites]: rows equal to re-derivation from originals",
+   "value": 1.0,
+   "expect": ">= 1.0",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "fsae_codes_s4 [sites]: CONTROL swapped rows equal",
+   "value": 0.0433,
+   "expect": "<= 0.05",
+   "passed": true,
+   "control": true,
+   "detail": ""
+  },
+  {
+   "name": "fsae_codes_s4 [panel]: rows equal to re-derivation from originals",
+   "value": 1.0,
+   "expect": ">= 1.0",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "fsae_codes_s4 [panel]: CONTROL swapped rows equal",
+   "value": 0.0333,
+   "expect": "<= 0.05",
+   "passed": true,
+   "control": true,
+   "detail": ""
+  },
+  {
+   "name": "fsae_plus_s0: train/benchmark share columns + standardisation",
+   "value": true,
+   "expect": "== True",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "fsae_plus_s0: extra columns",
+   "value": 32,
+   "expect": "== 32",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "fsae_plus_s0: standardised extra columns on train rows: max |mean|",
+   "value": 0.0,
+   "expect": "<= 1e-06",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "fsae_plus_s0: standardised extra columns on train rows: max |sd - 1|",
+   "value": 0.0,
+   "expect": "<= 0.0001",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "fsae_plus_s0 [sites]: rows equal to re-derivation from originals",
+   "value": 1.0,
+   "expect": ">= 1.0",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "fsae_plus_s0 [sites]: CONTROL swapped rows equal",
+   "value": 0.0433,
+   "expect": "<= 0.05",
+   "passed": true,
+   "control": true,
+   "detail": ""
+  },
+  {
+   "name": "fsae_plus_s0 [panel]: rows equal to re-derivation from originals",
+   "value": 1.0,
+   "expect": ">= 1.0",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "fsae_plus_s0 [panel]: CONTROL swapped rows equal",
+   "value": 0.0333,
+   "expect": "<= 0.05",
+   "passed": true,
+   "control": true,
+   "detail": ""
+  },
+  {
+   "name": "fsae_plus_s1: train/benchmark share columns + standardisation",
+   "value": true,
+   "expect": "== True",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "fsae_plus_s1: extra columns",
+   "value": 32,
+   "expect": "== 32",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "fsae_plus_s1: standardised extra columns on train rows: max |mean|",
+   "value": 0.0,
+   "expect": "<= 1e-06",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "fsae_plus_s1: standardised extra columns on train rows: max |sd - 1|",
+   "value": 0.0,
+   "expect": "<= 0.0001",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "fsae_plus_s1 [sites]: rows equal to re-derivation from originals",
+   "value": 1.0,
+   "expect": ">= 1.0",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "fsae_plus_s1 [sites]: CONTROL swapped rows equal",
+   "value": 0.0433,
+   "expect": "<= 0.05",
+   "passed": true,
+   "control": true,
+   "detail": ""
+  },
+  {
+   "name": "fsae_plus_s1 [panel]: rows equal to re-derivation from originals",
+   "value": 1.0,
+   "expect": ">= 1.0",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "fsae_plus_s1 [panel]: CONTROL swapped rows equal",
+   "value": 0.0333,
+   "expect": "<= 0.05",
+   "passed": true,
+   "control": true,
+   "detail": ""
+  },
+  {
+   "name": "fsae_plus_s2: train/benchmark share columns + standardisation",
+   "value": true,
+   "expect": "== True",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "fsae_plus_s2: extra columns",
+   "value": 32,
+   "expect": "== 32",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "fsae_plus_s2: standardised extra columns on train rows: max |mean|",
+   "value": 0.0,
+   "expect": "<= 1e-06",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "fsae_plus_s2: standardised extra columns on train rows: max |sd - 1|",
+   "value": 0.0,
+   "expect": "<= 0.0001",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "fsae_plus_s2 [sites]: rows equal to re-derivation from originals",
+   "value": 1.0,
+   "expect": ">= 1.0",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "fsae_plus_s2 [sites]: CONTROL swapped rows equal",
+   "value": 0.0433,
+   "expect": "<= 0.05",
+   "passed": true,
+   "control": true,
+   "detail": ""
+  },
+  {
+   "name": "fsae_plus_s2 [panel]: rows equal to re-derivation from originals",
+   "value": 1.0,
+   "expect": ">= 1.0",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "fsae_plus_s2 [panel]: CONTROL swapped rows equal",
+   "value": 0.0333,
+   "expect": "<= 0.05",
+   "passed": true,
+   "control": true,
+   "detail": ""
+  },
+  {
+   "name": "fsae_plus_s3: train/benchmark share columns + standardisation",
+   "value": true,
+   "expect": "== True",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "fsae_plus_s3: extra columns",
+   "value": 32,
+   "expect": "== 32",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "fsae_plus_s3: standardised extra columns on train rows: max |mean|",
+   "value": 0.0,
+   "expect": "<= 1e-06",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "fsae_plus_s3: standardised extra columns on train rows: max |sd - 1|",
+   "value": 0.0,
+   "expect": "<= 0.0001",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "fsae_plus_s3 [sites]: rows equal to re-derivation from originals",
+   "value": 1.0,
+   "expect": ">= 1.0",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "fsae_plus_s3 [sites]: CONTROL swapped rows equal",
+   "value": 0.0433,
+   "expect": "<= 0.05",
+   "passed": true,
+   "control": true,
+   "detail": ""
+  },
+  {
+   "name": "fsae_plus_s3 [panel]: rows equal to re-derivation from originals",
+   "value": 1.0,
+   "expect": ">= 1.0",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "fsae_plus_s3 [panel]: CONTROL swapped rows equal",
+   "value": 0.0333,
+   "expect": "<= 0.05",
+   "passed": true,
+   "control": true,
+   "detail": ""
+  },
+  {
+   "name": "fsae_plus_s4: train/benchmark share columns + standardisation",
+   "value": true,
+   "expect": "== True",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "fsae_plus_s4: extra columns",
+   "value": 32,
+   "expect": "== 32",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "fsae_plus_s4: standardised extra columns on train rows: max |mean|",
+   "value": 0.0,
+   "expect": "<= 1e-06",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "fsae_plus_s4: standardised extra columns on train rows: max |sd - 1|",
+   "value": 0.0,
+   "expect": "<= 0.0001",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "fsae_plus_s4 [sites]: rows equal to re-derivation from originals",
+   "value": 1.0,
+   "expect": ">= 1.0",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "fsae_plus_s4 [sites]: CONTROL swapped rows equal",
+   "value": 0.0433,
+   "expect": "<= 0.05",
+   "passed": true,
+   "control": true,
+   "detail": ""
+  },
+  {
+   "name": "fsae_plus_s4 [panel]: rows equal to re-derivation from originals",
+   "value": 1.0,
+   "expect": ">= 1.0",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "fsae_plus_s4 [panel]: CONTROL swapped rows equal",
+   "value": 0.0333,
+   "expect": "<= 0.05",
+   "passed": true,
+   "control": true,
+   "detail": ""
+  },
+  {
+   "name": "posctl: train/benchmark share columns + standardisation",
+   "value": true,
+   "expect": "== True",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "posctl: extra columns",
+   "value": 1,
+   "expect": "== 1",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "posctl: standardised extra columns on train rows: max |mean|",
+   "value": 0.0,
+   "expect": "<= 1e-06",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "posctl: standardised extra columns on train rows: max |sd - 1|",
+   "value": 0.0,
+   "expect": "<= 0.0001",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "posctl [sites]: rows equal to re-derivation from originals",
+   "value": 1.0,
+   "expect": ">= 1.0",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "posctl [sites]: CONTROL swapped rows equal",
+   "value": 0.0433,
+   "expect": "<= 0.05",
+   "passed": true,
+   "control": true,
+   "detail": ""
+  },
+  {
+   "name": "posctl [panel]: rows equal to re-derivation from originals",
+   "value": 1.0,
+   "expect": ">= 1.0",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "posctl [panel]: CONTROL swapped rows equal",
+   "value": 0.0333,
+   "expect": "<= 0.05",
+   "passed": true,
+   "control": true,
+   "detail": ""
+  }
+ ],
+ "info": {
+  "rows": {
+   "train": 660061,
+   "select": 69412,
+   "eval": 612686,
+   "panel_usable": 181397,
+   "panel_all": 184181
+  }
+ }
+}

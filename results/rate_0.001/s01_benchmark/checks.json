@@ -1,0 +1,155 @@
+{
+ "block": "s01_benchmark",
+ "ok": true,
+ "checks": [
+  {
+   "name": "count[hgmd_reg]",
+   "value": 1614,
+   "expect": "== 1614",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "count[unmatched]",
+   "value": 161400,
+   "expect": "== 161400",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "count[matched_by_tss]",
+   "value": 16140,
+   "expect": "== 16140",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "count[matched_by_region]",
+   "value": 5027,
+   "expect": "== 5027",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "keys_unique",
+   "value": true,
+   "expect": "== True",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "end_equals_start_plus_1",
+   "value": true,
+   "expect": "== True",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "ref_onehot_valid_frac",
+   "value": 1.0,
+   "expect": ">= 0.99",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "ref_equals_hg19[start] (0-based)",
+   "value": 1.0,
+   "expect": ">= 0.99",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "CONTROL ref_equals_hg19[start+1]",
+   "value": 0.24563880096209706,
+   "expect": "<= 0.5",
+   "passed": true,
+   "control": true,
+   "detail": ""
+  },
+  {
+   "name": "CONTROL ref_equals_hg19[start-1]",
+   "value": 0.2455519298950489,
+   "expect": "<= 0.5",
+   "passed": true,
+   "control": true,
+   "detail": ""
+  },
+  {
+   "name": "label_conflict_frac",
+   "value": 5.4294416905109645e-06,
+   "expect": "<= 0.01",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "published_linsight_defined_frac",
+   "value": 0.9875665785287299,
+   "expect": ">= 0.97",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "published_linsight_auroc[unmatched] = paper",
+   "value": 0.8977,
+   "expect": "0.897 \u00b1 0.01",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "published_linsight_auroc[matched_by_tss] = paper",
+   "value": 0.7618,
+   "expect": "0.759 \u00b1 0.01",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "published_linsight_auroc[matched_by_region] = paper",
+   "value": 0.6643,
+   "expect": "0.66 \u00b1 0.01",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  }
+ ],
+ "info": {
+  "n_label_conflict": 1,
+  "chromosomes": [
+   "chr1",
+   "chr10",
+   "chr11",
+   "chr12",
+   "chr13",
+   "chr14",
+   "chr15",
+   "chr16",
+   "chr17",
+   "chr18",
+   "chr19",
+   "chr2",
+   "chr20",
+   "chr21",
+   "chr22",
+   "chr3",
+   "chr4",
+   "chr5",
+   "chr6",
+   "chr7",
+   "chr8",
+   "chr9",
+   "chrX",
+   "chrY"
+  ]
+ }
+}

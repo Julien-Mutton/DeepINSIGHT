@@ -1,0 +1,122 @@
+{
+ "block": "s06_embed",
+ "ok": true,
+ "checks": [
+  {
+   "name": "panel lift keys aligned with panel",
+   "value": true,
+   "expect": "== True",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sites: every lifted row finite",
+   "value": true,
+   "expect": "== True",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sites: min row std (not degenerate)",
+   "value": 0.58657,
+   "expect": ">= 0.001",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sites: rows == rows of the set",
+   "value": 1362112,
+   "expect": "== 1362112",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sites: non-lifted rows are NaN",
+   "value": true,
+   "expect": "== True",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "panel: every lifted row finite",
+   "value": true,
+   "expect": "== True",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "panel: min row std (not degenerate)",
+   "value": 0.47118,
+   "expect": ">= 0.001",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "panel: rows == rows of the set",
+   "value": 184181,
+   "expect": "== 184181",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "panel: non-lifted rows are NaN",
+   "value": true,
+   "expect": "== True",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sites: re-embedding cos (min over 100 rows)",
+   "value": 1.0,
+   "expect": ">= 0.9999",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "sites: CONTROL frac shuffled rows with cos >= 0.9999",
+   "value": 0.01,
+   "expect": "<= 0.05",
+   "passed": true,
+   "control": true,
+   "detail": ""
+  },
+  {
+   "name": "panel: re-embedding cos (min over 100 rows)",
+   "value": 1.0,
+   "expect": ">= 0.9999",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  },
+  {
+   "name": "panel: CONTROL frac shuffled rows with cos >= 0.9999",
+   "value": 0.01,
+   "expect": "<= 0.05",
+   "passed": true,
+   "control": true,
+   "detail": ""
+  }
+ ],
+ "info": {
+  "targets_sha256": "3603eb2a78aa03dfb04619eb09732d5c98b6382555a3bb724f39b973c10a46e5",
+  "reused_identical_targets": true,
+  "shape sites_mean": [
+   1362112,
+   256
+  ],
+  "shape panel_mean": [
+   184181,
+   256
+  ]
+ }
+}

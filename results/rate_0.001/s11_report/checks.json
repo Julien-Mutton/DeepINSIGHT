@@ -1,0 +1,15 @@
+{
+ "block": "s11_report",
+ "ok": true,
+ "checks": [
+  {
+   "name": "report written",
+   "value": true,
+   "expect": "== True",
+   "passed": true,
+   "control": false,
+   "detail": ""
+  }
+ ],
+ "info": {}
+}

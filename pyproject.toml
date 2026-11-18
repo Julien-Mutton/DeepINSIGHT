@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "deepinsight"
+version = "1.0.0"
+description = "Does a genomic language model (HyenaDNA) add information to LINSIGHT? Canonical pipeline of the DeepINSIGHT report."
+readme = "README.md"
+requires-python = ">=3.10"
+license = {file = "LICENSE"}
+
+[project.scripts]
+deepinsight = "deepinsight.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
